@@ -1,5 +1,6 @@
 pacman -Sy pacman-contrib
 timedatectl set-ntp true
+loadkeys uk
 
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 cat /etc/pacman.d/mirrorlist.backup | grep -A 1 "United Kingdom" | grep "[^\-]" > /etc/pacman.d/mirrorlist.uk
@@ -9,3 +10,4 @@ pacstrap /mnt base linux linux-firmware base-devel dhcpcd git
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
+arch-chroot /mnt
