@@ -1,4 +1,4 @@
-ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 hwclock --systohc
 
 cp /etc/locale.gen /etc/locale.gen.backup
