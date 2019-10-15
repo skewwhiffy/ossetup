@@ -1,5 +1,3 @@
-timedatectl set-ntp true
-
 parted /dev/sda -- mklabel gpt
 parted /dev/sda -- mkpart primary 512MiB -16GiB
 parted /dev/sda -- mkpart primary linux-swap -16GiB 100%
@@ -14,7 +12,3 @@ mount /dev/disk/by-label/arch /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/sda2
-
-pacstrap /mnt base linux linux-firmware base-devel dhcpcd
-
-genfstab -U /mnt >> /mnt/etc/fstab
