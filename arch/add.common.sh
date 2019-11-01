@@ -5,7 +5,8 @@ git clone https://aur.archlinux.org/yay.git
 makepkg -Si
 
 echo Installing common utilities from AUR
-yay -Syu yadm docker ttf-iosevka aic94xx-firmware wd719x-firmware dropbox-gtk rtl88xxau-aircrack-dkms-git spotblock-git
+yay -Syu yadm docker ttf-iosevka aic94xx-firmware wd719x-firmware
+yay -Syu dropbox-gtk rtl88xxau-aircrack-dkms-git spotblock-git wkhtmltopdf-static
 sudo groupadd docker
 sudo usermod -aG docker kenny
 systemctl --user enable spotblock
