@@ -1,5 +1,5 @@
 sudo pacman -Syu
-sudo pacman -Syu linux-headers nvidia
+sudo pacman -Syu linux-headers nvidia terminator
 sudo pacman -Syu lightdm lightdm-gtk-greeter
 sudo pacman -Syu cinnamon
 sudo systemctl enable lightdm

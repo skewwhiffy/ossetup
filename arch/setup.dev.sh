@@ -12,5 +12,7 @@ cd ~/.jabba/jdk
 jenv add adopt@1.8.0-232
 
 echo Downloading Google Java format file for IntelliJ
+mkdir -p ~/Downloads
 cd ~/Downloads
 wget https://raw.githubusercontent.com/google/styleguide/gh-pages/intellij-java-google-style.xml
+
