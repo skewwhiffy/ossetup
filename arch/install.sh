@@ -10,4 +10,8 @@ pacstrap /mnt base linux linux-firmware base-devel dhcpcd git neovim grub efiboo
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
+echo Installed a base system. Clone this repo in your new system and run setup.sh
+echo This repo is at:
+git remote -v
+
 arch-chroot /mnt
