@@ -27,4 +27,6 @@ passwd kenny
 echo Set root password
 passwd
 
-echo Reboot. You should get a working system. Run add.cinnamon.sh to install a Cinnamon desktop.
+echo Reboot. You should get a working system.
+echo Run add.cinnamon.sh to install a Cinnamon desktop.
+echo Run add.gnome.sh to install a Gnome desktop.
