@@ -22,4 +22,4 @@ sudo pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra fzf
 echo Installing some flatpaks
 flatpak install flathub com.spotify.Client us.zoom.Zoom io.dbeaver.DBeaverCommunity com.getpostman.Postman
 
-echo Reboot. You should have quite a lot of your stuff setup now. Run add.dev.sh to set up dev tools
+echo Reboot. You should have quite a lot of your stuff setup now. See dev folder to set up dev tools.
