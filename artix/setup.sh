@@ -1,6 +1,6 @@
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 hwclock --systohc
-rc-update add NetworkManager default
+ln -s /etc/runit/sv/NetworkManager /run/runit/service
 
 cp /etc/locale.gen /etc/locale.gen.backup
 echo en_GB.UTF-8 UTF-8 > /etc/locale.gen

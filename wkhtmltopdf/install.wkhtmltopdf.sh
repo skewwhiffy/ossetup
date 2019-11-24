@@ -1,4 +1,6 @@
 #!/bin/sh
+echo This script doesn''t work at the moment. Exiting.
+exit 1
 echo Getting latest version of wkhtmltopdf
 filename=$(curl https://github.com/wkhtmltopdf/wkhtmltopdf/releases \
   | grep href \
@@ -13,22 +15,16 @@ filename=$(curl https://github.com/wkhtmltopdf/wkhtmltopdf/releases \
 url=https://github.com/$filename
 
 echo Downloading latest version of wkhtmltopdf
-rm -f wkhtmltopdf.deb
-wget -O wkhtmltopdf.deb $url
-exit 1
+#rm -f wkhtmltopdf.deb
+#wget -O wkhtmltopdf.deb $url
 
 echo Extracting package
 rm -rf workspace
 mkdir ./workspace
 bsdtar -O -xf *.deb data.tar.xz | bsdtar -C ./workspace -xJf -
 
-echo Installing nordvpn. I might need your password.
-sudo cp -r ./workspace/var/* /var
-sudo cp -r ./workspace/usr/bin /usr/bin
-sudo cp -r ./workspace/usr/sbin/* /usr/sbin/
-sudo cp -r ./workspace/usr/lib /usr/sbin
-sudo chmod 0755 /usr/bin/nordvpn
+echo Installing wkhtmltopdf. I might need your password.
+sudo cp -r ./workspace/usr/local /usr/
+sudo chmod -R 0755 /usr/local
 
 echo Done.
-echo To run as a daemon: sudo nordvpnd
-echo nordvpn should be installed.
