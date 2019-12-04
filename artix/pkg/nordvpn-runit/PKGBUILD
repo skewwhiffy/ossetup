@@ -1,0 +1,33 @@
+# Maintainer: Kenny Hung
+
+_sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
+
+pkgname=nordvpn-runit
+pkgver=20191020
+pkgrel=1
+pkgdesc="runit service scripts for nordvpn"
+arch=('any')
+url="https://github.com/artix-linux"
+license=('BSD3')
+depends=('nordvpn-bin' 'runit')
+provides=('nordvpn-runscripts')
+replaces=('nordvpn-runscripts')
+source=("nordvpn.run")
+sha256sums=('b43d864434367cc5f2e9c6c440c7a8255b9dbe819f904d001e36a54e57c73246')
+
+_inst_sv(){
+    for file in run finish check; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/runit/sv/$1/$file"
+            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'nordvpn'
+    sed -e 's|nordvpn.pid|nordvpn/pid|g' -i "${pkgdir}/etc/runit/sv/nordvpn"/*
+
+    install -d "${pkgdir}/etc/runit/runsvdir/default"
+    ln -sf "/etc/runit/sv/nordvpn" "${pkgdir}/etc/runit/runsvdir/default/nordvpn"
+}
