@@ -1,0 +1,33 @@
+# Maintainer: Kenny Hung
+
+_sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
+
+pkgname=onedrive-abraunegg-runit
+pkgver=20191204
+pkgrel=1
+pkgdesc="runit service scripts for onedrive-abraunegg"
+arch=('any')
+url="https://github.com/artix-linux"
+license=('BSD3')
+depends=('onedrive-abraunegg' 'runit')
+provides=('onedrive-abraunegg-runscripts')
+replaces=('onedrive-abraunegg-runscripts')
+source=("onedrive.run")
+sha256sums=('4784a437f6474b3069d6adf94d70419166d86f3c785eeabbd3d0dfa88f0c8410')
+
+_inst_sv(){
+    for file in run finish check; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/runit/sv/$1/$file"
+            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'onedrive'
+    sed -e 's|onedrive.pid|onedrive/pid|g' -i "${pkgdir}/etc/runit/sv/onedrive"/*
+
+    install -d "${pkgdir}/etc/runit/runsvdir/default"
+    ln -sf "/etc/runit/sv/onedrive" "${pkgdir}/etc/runit/runsvdir/default/onedrive"
+}
