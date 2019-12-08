@@ -8,6 +8,7 @@ echo Creating "$swap"GiB of swap
 pacman -Sy --noconfirm parted
 swapoff -a
 
+wipefs --all --force /dev/sda
 parted -a optimal -s /dev/sda -- mklabel gpt
 parted -a optimal -s /dev/sda -- mkpart primary 512MiB -"$swap"GiB
 parted -a optimal -s /dev/sda -- mkpart primary linux-swap -"$swap"GiB 100%
