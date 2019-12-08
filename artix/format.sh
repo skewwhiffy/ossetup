@@ -1,4 +1,4 @@
-
+echo Formatting and mounting /dev/sda
 totalk=$(awk '/^MemTotal:/{print $2}' /proc/meminfo)
 totalm=$(($totalk / 1024))
 totalg=$(($totalm / 1024))
@@ -23,4 +23,5 @@ mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/sda2
 
-./setup.sh
+echo Disk formatted. Calling install.
+./install.sh
