@@ -22,3 +22,5 @@ mount /dev/disk/by-label/artix /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/sda2
+
+./setup.sh
