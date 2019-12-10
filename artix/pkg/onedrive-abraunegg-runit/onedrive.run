@@ -1,2 +1,3 @@
-#!/bin/sh
-onedrive --monitor
+#!/bin/sh -e
+exec 2>&1
+exec chpst -u kenny onedrive --monitor
