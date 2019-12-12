@@ -2,8 +2,6 @@ pacman -Sy --noconfirm pacman-contrib
 timedatectl set-ntp true
 loadkeys uk
 
-rankmirrors /etc/pacman.d/mirrorlist.uk > /etc/pacman.d/mirrorlist
-
 basestrap /mnt base linux linux-firmware base-devel git neovim grub efibootmgr runit \
   networkmanager networkmanager-runit network-manager-applet elogind-runit
 

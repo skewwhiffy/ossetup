@@ -2,9 +2,6 @@ ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 hwclock --systohc
 ln -s /etc/runit/sv/NetworkManager /run/runit/service
 
-cp /etc/locale.gen /etc/locale.gen.backup
-echo en_GB.UTF-8 UTF-8 > /etc/locale.gen
-locale-gen
 echo LANG=en_GB.UTF-8 > /etc/locale.conf
 echo KEYMAP=uk > /etc/vconsole.conf
 echo kenny-linux > /etc/hostname
@@ -19,5 +16,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo Set root password
 passwd
 
-echo Set CLOCK to UTC in /etc/conf.d/hwclock
+echo Uncomment the en_GB.UTF-8 UTF-8 in /etc/locale.gen
+echo run locale-gen
 echo Then reboot. You should get a working system.
