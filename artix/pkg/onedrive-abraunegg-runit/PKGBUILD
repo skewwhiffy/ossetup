@@ -3,7 +3,7 @@
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=onedrive-abraunegg-runit
-pkgver=20191204
+pkgver=20191207
 pkgrel=1
 pkgdesc="runit service scripts for onedrive-abraunegg"
 arch=('any')
@@ -12,8 +12,18 @@ license=('BSD3')
 depends=('onedrive-abraunegg' 'runit')
 provides=('onedrive-abraunegg-runscripts')
 replaces=('onedrive-abraunegg-runscripts')
-source=("onedrive.run")
-sha256sums=('4784a437f6474b3069d6adf94d70419166d86f3c785eeabbd3d0dfa88f0c8410')
+source=("onedrive.run" "logonedrive.run")
+sha256sums=('e91c16bbd432eb79a6edcc35a52da4c630b8ab8da34390130a12a19978250923'
+  '333c4e8f93a58c3373ee941662dac511d6ddc18aa065caed7f1b6f3b4c76dc06')
+
+_inst_logsv() {
+    for file in run finish check; do
+        if test -f "$srcdir/log$1.$file"; then
+            install -Dm755 "$srcdir/log$1.$file" "$pkgdir/etc/runit/sv/$1/log/$file"
+            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/log/$file"
+        fi
+    done
+}
 
 _inst_sv(){
     for file in run finish check; do
@@ -27,6 +37,7 @@ _inst_sv(){
 package() {
     _inst_sv 'onedrive'
     sed -e 's|onedrive.pid|onedrive/pid|g' -i "${pkgdir}/etc/runit/sv/onedrive"/*
+    _inst_logsv 'onedrive'
 
     install -d "${pkgdir}/etc/runit/runsvdir/default"
     ln -sf "/etc/runit/sv/onedrive" "${pkgdir}/etc/runit/runsvdir/default/onedrive"
