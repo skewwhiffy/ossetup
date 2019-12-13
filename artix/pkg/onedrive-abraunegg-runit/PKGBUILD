@@ -3,7 +3,7 @@
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=onedrive-abraunegg-runit
-pkgver=20191207
+pkgver=20191208
 pkgrel=1
 pkgdesc="runit service scripts for onedrive-abraunegg"
 arch=('any')
@@ -14,7 +14,7 @@ provides=('onedrive-abraunegg-runscripts')
 replaces=('onedrive-abraunegg-runscripts')
 source=("onedrive.run" "logonedrive.run")
 sha256sums=('e91c16bbd432eb79a6edcc35a52da4c630b8ab8da34390130a12a19978250923'
-  '333c4e8f93a58c3373ee941662dac511d6ddc18aa065caed7f1b6f3b4c76dc06')
+  '78f59baa9d291a6c72455d47807ac51cabd9f7f006d64472df1c8a4d38396b01')
 
 _inst_logsv() {
     for file in run finish check; do

@@ -1,2 +1,2 @@
 #!/bin/sh
-exec logger -t onedrive
+exec svlogd -t /etc/runit/sv/onedrive/log
