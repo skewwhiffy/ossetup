@@ -5,16 +5,17 @@ if [[ ! -d yay ]]; then
     git clone https://aur.archlinux.org/yay.git
 fi
 cd yay
-makepkg -si
+makepkg -si --noconfirm
 
-echo Installing common utilities
-sudo pacman -Syu --noconfirm tk inetutils gnome-disk-utility openssh firefox neovim wmctrl chromium usbutils
-sudo pacman -Syu --noconfirm xclip code zsh keepassxc mame maven curl wget conky the_silver_searcher
-sudo pacman -Syu --noconfirm noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra fzf
+echo Installing the first few so that you can get on with other stuff.
+yay -Syu --noconfirm yadm dropbox firefox neovim zsh keepassxc 
 
-echo Installing common utilities from AUR
-yay -Syu --noconfirm yadm docker ttf-iosevka aic94xx-firmware wd719x-firmware jetbrains-toolbox 
-yay -Syu --noconfirm dropbox rtl88xxau-aircrack-dkms-git wkhtmltopdf-static docker-runit
-# Spotify Zoom DBeaver Postman
+echo Installing common stuff
+yay -Syu --noconfirm tk inetutils gnome-disk-utility openssh wmctrl chromium usbutils \
+	xclip code mame maven curl wget conky the_silver_searcher \
+	noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra fzf \
+	docker ttf-iosevka aic94xx-firmware wd719x-firmware jetbrains-toolbox \
+	rtl88xxau-aircrack-dkms-git wkhtmltopdf-static docker-runit \
+	spotify blockify zoom dbeaver postman
 
 echo Reboot. You should have quite a lot of your stuff setup now. See dev folder to set up dev tools.
