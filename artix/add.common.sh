@@ -16,6 +16,6 @@ yay -Syu --noconfirm tk inetutils gnome-disk-utility openssh wmctrl chromium usb
 	noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra fzf \
 	docker ttf-iosevka aic94xx-firmware wd719x-firmware jetbrains-toolbox \
 	rtl88xxau-aircrack-dkms-git wkhtmltopdf-static docker-runit \
-	spotify blockify zoom dbeaver postman
+	spotify blockify zoom dbeaver postman wget curl chromium onedrive-abraunegg
 
 echo Reboot. You should have quite a lot of your stuff setup now. See dev folder to set up dev tools.
