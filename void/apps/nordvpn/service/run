@@ -1,0 +1,3 @@
+#!/bin/sh
+echo Starting NordVPN service
+/usr/local/bin/nordvpnd
