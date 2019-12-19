@@ -14,4 +14,4 @@ cd mongo-tools
 
 echo Making tools available globally
 cd bin
-sudo cp * /usr/local/bin
+sudo cp -p * /usr/local/bin
