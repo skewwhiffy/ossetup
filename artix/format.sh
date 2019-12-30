@@ -18,9 +18,9 @@ parted -a optimal -s /dev/sda -- set 3 boot on
 mkfs.ext4 -L artix /dev/sda1
 mkswap -L swap /dev/sda2
 mkfs.fat -F 32 -n boot /dev/sda3
-mount /dev/disk/by-label/artix /mnt
 
 mkdir -p /mnt/boot
+mount /dev/disk/by-label/artix /mnt
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/sda2
 

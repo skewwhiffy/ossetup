@@ -1,9 +1,6 @@
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 hwclock --systohc
 
-cp /etc/locale.gen /etc/locale.gen.backup
-echo en_GB.UTF-8 UTF-8 > /etc/locale.gen
-locale-gen
 echo LANG=en_GB.UTF-8 > /etc/locale.conf
 echo KEYMAP=uk > /etc/vconsole.conf
 echo kenny-linux > /etc/hostname
@@ -27,6 +24,8 @@ passwd kenny
 echo Set root password
 passwd
 
+echo Uncomment en_GB.UTF-8 UTF-8 line in /etc/locale.gen
+echo Run locale-gen
 echo Reboot. You should get a working system.
 echo Run add.cinnamon.sh to install a Cinnamon desktop.
 echo Run add.gnome.sh to install a Gnome desktop.
