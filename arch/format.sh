@@ -17,9 +17,10 @@ mkfs.ext4 -L arch /dev/sda1
 mkswap -L swap /dev/sda2
 mkfs.fat -F 32 -n boot /dev/sda3
 
-mkdir -p /mnt/boot
 mount /dev/disk/by-label/arch /mnt
+mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
-swapon /dev/disk/by-label/swap
+swapon /dev/sda2
+
 
 echo Formatted. You should run install.sh now to get a base system.
