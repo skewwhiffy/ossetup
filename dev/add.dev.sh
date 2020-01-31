@@ -1,16 +1,16 @@
 echo Installing oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+./add.oh.my.zsh.sh
 
 echo Installing nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
+./add.nvm.sh
 
 echo Installing jabba
-curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+./add.jabba.sh
 
 echo Installing jenv
-git clone https://github.com/gcuisinier/jenv.git ~/.jenv
+./add.jenv.sh
 
 echo Installing gvm
-bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+./add.gvm.sh
 
-echo Reboot, then run setup.dev.sh
+echo Reboot
