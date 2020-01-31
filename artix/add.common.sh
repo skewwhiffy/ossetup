@@ -8,7 +8,7 @@ cd yay
 makepkg -si --noconfirm
 
 echo Installing the first few so that you can get on with other stuff.
-yay -Syu --noconfirm yadm dropbox firefox neovim zsh keepassxc 
+yay -Syu --noconfirm yadm dropbox firefox neovim zsh keepassxc rhythmbox
 
 echo Installing common stuff
 yay -Syu --noconfirm tk inetutils gnome-disk-utility openssh wmctrl chromium usbutils \
