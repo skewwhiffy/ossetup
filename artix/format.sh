@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
-disk=$(grep -Po "(?<=^disk=).+" config)
-if [ $disk == SYSTEM_DISK ]
-then
-  echo "***** ERROR *****"
-  echo "You need to set the system disk in config"
-  fdisk -l
-  exit 1
-fi
+source pre.flight.checks.sh
 
 echo Formatting and mounting $disk
 totalk=$(awk '/^MemTotal:/{print $2}' /proc/meminfo)
@@ -35,4 +28,17 @@ mount /dev/disk/by-label/boot /mnt/boot
 swapon ${disk}2
 
 echo Disk formatted. Calling install.
-./install.sh
+pacman -Sy --noconfirm pacman-contrib
+timedatectl set-ntp true
+loadkeys uk
+
+basestrap /mnt base linux linux-firmware base-devel git neovim grub efibootmgr runit \
+  networkmanager networkmanager-runit network-manager-applet elogind-runit
+
+fstabgen -L /mnt >> /mnt/etc/fstab
+
+echo Copying setup files
+cp -r ../../ossetup/ /mnt/ossetup
+
+echo Installed a base system. Calling setup on your new system.
+artools-chroom /mnt /bin/bash -c ./ossetup/artix/setup.sh

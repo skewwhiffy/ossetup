@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+source pre.flight.checks.sh
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 hwclock --systohc
 ln -s /etc/runit/sv/NetworkManager /run/runit/service
@@ -13,9 +15,14 @@ mkinitcpio -P
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
-echo Set root password
-passwd
+mv /etc/locale.gen /etc/locale.orig.gen
+sed s/#en_GB.UTF-8/en_GB.UTF-8/ /etc/locale.orig.gen >/etc/locale.gen
+locale-gen
 
-echo Uncomment the en_GB.UTF-8 UTF-8 in /etc/locale.gen
-echo run locale-gen
-echo Then reboot. You should get a working system.
+echo Set root password
+until passwd
+do
+  echo That did not work. Try again, please.
+done
+
+echo Now exit and reboot. You should get a working system.
