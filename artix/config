@@ -1,0 +1,4 @@
+disk=SYSTEM_DISK
+user=kenny
+password=USER_PASSWORD
+root_password=ROOT_PASSWORD
