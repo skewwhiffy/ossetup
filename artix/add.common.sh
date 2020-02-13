@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo Installing common stuff
 yay -Syu --noconfirm --needed tk inetutils gnome-disk-utility openssh wmctrl chromium usbutils
 yay -Syu --noconfirm --needed xclip code mame maven curl wget conky the_silver_searcher

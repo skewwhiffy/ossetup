@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo Installing yay
 mkdir -p ~/code/aur
 cd ~/code/aur

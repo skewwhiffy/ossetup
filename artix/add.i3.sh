@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 sudo pacman -Syu --noconfirm
 sudo pacman -Syu --noconfirm linux-headers nvidia terminator
 sudo pacman -Syu --noconfirm lightdm lightdm-gtk-greeter lightdm-runit
