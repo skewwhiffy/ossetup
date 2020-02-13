@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo Installing common stuff
 yay -Syu --noconfirm --needed tk inetutils gnome-disk-utility openssh wmctrl chromium usbutils
-yay -Syu --noconfirm --needed xclip code mame maven curl wget conky the_silver_searcher
+yay -Syu --noconfirm --needed xclip code mame maven curl wget conky the_silver_searcher okular
 yay -Syu --noconfirm --needed noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra fzf
 yay -Syu --noconfirm --needed docker ttf-iosevka aic94xx-firmware wd719x-firmware jetbrains-toolbox
 yay -Syu --noconfirm --needed rtl88xxau-aircrack-dkms-git wkhtmltopdf-static docker-runit

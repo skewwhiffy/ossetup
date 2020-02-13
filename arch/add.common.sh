@@ -13,7 +13,7 @@ yay -Syu --noconfirm yadm dropbox rhythmbox firefox wmctrl neovim xclip zsh keep
 echo Installing common utilities from AUR
 yay -Syu --noconfirm docker ttf-iosevka aic94xx-firmware wd719x-firmware jetbrains-toolbox \
   rtl88xxau-aircrack-dkms-git spotblock-git wkhtmltopdf-static \
-  spotify dbeaver zoom postman
+  spotify dbeaver zoom postman okular
 
 echo Installing common utilities
 sudo pacman -Syu --noconfirm tk inetutils gnome-disk-utility openssh chromium usbutils \
