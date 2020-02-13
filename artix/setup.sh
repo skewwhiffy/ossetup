@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-source pre.flight.checks.sh
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 hwclock --systohc
-ln -s /etc/runit/sv/NetworkManager /run/runit/service
 
 echo LANG=en_GB.UTF-8 > /etc/locale.conf
 echo KEYMAP=uk > /etc/vconsole.conf
@@ -24,5 +22,8 @@ until passwd
 do
   echo That did not work. Try again, please.
 done
+
+echo Linking up network service
+ln -s /etc/runit/sv/NetworkManager /run/runit/service
 
 echo Now exit and reboot. You should get a working system.
