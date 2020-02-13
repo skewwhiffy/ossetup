@@ -41,4 +41,4 @@ echo Copying setup files
 cp -r ../../ossetup/ /mnt/ossetup
 
 echo Installed a base system. Calling setup on your new system.
-artools-chroom /mnt /bin/bash -c ./ossetup/artix/setup.sh
+artools-chroot /mnt /bin/bash -c ./ossetup/artix/setup.sh
