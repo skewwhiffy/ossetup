@@ -39,7 +39,7 @@ yay -Syu --noconfirm --needed wkhtmltopdf-static
 yay -Syu --noconfirm --needed docker-runit
 yay -Syu --noconfirm --needed zoom
 yay -Syu --noconfirm --needed dbeaver
-yay -Syu --noconfirm --needed postman
+yay -Syu --noconfirm --needed postman-bin
 yay -Syu --noconfirm --needed wget
 yay -Syu --noconfirm --needed curl
 yay -Syu --noconfirm --needed chromium
