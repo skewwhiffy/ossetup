@@ -24,6 +24,7 @@ yay -Syu --noconfirm --needed maven
 yay -Syu --noconfirm --needed mint-x-icons
 yay -Syu --noconfirm --needed mint-y-icons
 yay -Syu --noconfirm --needed mongodb-compass-community-bin
+yay -Syu --noconfirm --needed mongodb-shell-bin
 yay -Syu --noconfirm --needed mongodb-tools-bin
 yay -Syu --noconfirm --needed noto-fonts
 yay -Syu --noconfirm --needed noto-fonts-cjk
