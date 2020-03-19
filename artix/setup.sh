@@ -24,6 +24,7 @@ do
 done
 
 echo Linking up network service
+mkdir -p /run/runit/service
 ln -s /etc/runit/sv/NetworkManager /run/runit/service
 
 echo Now exit and reboot. You should get a working system.

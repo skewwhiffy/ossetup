@@ -33,7 +33,7 @@ timedatectl set-ntp true
 loadkeys uk
 
 basestrap /mnt base linux linux-firmware base-devel git neovim grub efibootmgr runit \
-  networkmanager networkmanager-runit network-manager-applet elogind-runit
+  networkmanager networkmanager-runit network-manager-applet elogind-runit openssh
 
 fstabgen -L /mnt >> /mnt/etc/fstab
 
