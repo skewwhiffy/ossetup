@@ -48,6 +48,7 @@ yay -Syu --noconfirm --needed the_silver_searcher
 yay -Syu --noconfirm --needed tk
 yay -Syu --noconfirm --needed ttf-iosevka
 yay -Syu --noconfirm --needed usbutils
+yay -Syu --noconfirm --needed vlc
 yay -Syu --noconfirm --needed wd719x-firmware
 yay -Syu --noconfirm --needed wget
 yay -Syu --noconfirm --needed wget
