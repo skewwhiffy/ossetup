@@ -15,6 +15,7 @@ yay -Syu --noconfirm --needed docker-runit
 yay -Syu --noconfirm --needed fzf
 yay -Syu --noconfirm --needed gnome-disk-utility
 yay -Syu --noconfirm --needed gnome-system-monitor
+yay -Syu --noconfirm --needed gst-libav
 yay -Syu --noconfirm --needed hplip
 yay -Syu --noconfirm --needed inetutils
 yay -Syu --noconfirm --needed jetbrains-toolbox
