@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 echo Installing common stuff
 yay -Syu --noconfirm --needed aic94xx-firmware
+yay -Syu --noconfirm --needed authy
 yay -Syu --noconfirm --needed bison
 yay -Syu --noconfirm --needed chromium
 yay -Syu --noconfirm --needed code
