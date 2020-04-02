@@ -16,7 +16,7 @@ if [ $init == INIT ]
 then
   echo "***** ERROR *****"
   echo "You need to set the init system in config"
-  fdisk -l
+  echo "You can use the following init systems: runit, s6, openrc"
   exit 1
 fi
 echo Init system is $init
