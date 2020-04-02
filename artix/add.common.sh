@@ -51,6 +51,7 @@ yay -Syu --noconfirm --needed sane
 yay -Syu --noconfirm --needed simple-scan
 yay -Syu --noconfirm --needed the_silver_searcher
 yay -Syu --noconfirm --needed tk
+yay -Syu --noconfirm --needed tmux
 yay -Syu --noconfirm --needed ttf-iosevka
 yay -Syu --noconfirm --needed unzip
 yay -Syu --noconfirm --needed usbutils
