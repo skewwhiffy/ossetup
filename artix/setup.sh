@@ -23,8 +23,13 @@ do
   echo That did not work. Try again, please.
 done
 
-echo Linking up network service
-mkdir -p /run/runit/service
-ln -s /etc/runit/sv/NetworkManager /run/runit/service
+if [ $init == runit ]
+then
+  echo Linking up network service
+  mkdir -p /run/runit/service
+  ln -s /etc/runit/sv/NetworkManager /run/runit/service
+else
+  echo You have to link up the network service for $init
+fi
 
 echo Now exit and reboot. You should get a working system.

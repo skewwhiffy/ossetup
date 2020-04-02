@@ -9,3 +9,14 @@ then
   exit 1
 fi
 echo System disk is $disk
+
+echo Getting init system
+export init=$(grep -Po "(?<=^init=).+" config)
+if [ $init == INIT ]
+then
+  echo "***** ERROR *****"
+  echo "You need to set the init system in config"
+  fdisk -l
+  exit 1
+fi
+echo Init system is $init

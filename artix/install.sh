@@ -32,8 +32,8 @@ pacman -Sy --noconfirm pacman-contrib
 timedatectl set-ntp true
 loadkeys uk
 
-basestrap /mnt base linux linux-firmware base-devel git neovim grub efibootmgr runit \
-  networkmanager networkmanager-runit network-manager-applet elogind-runit openssh
+basestrap /mnt base linux linux-firmware base-devel git neovim grub efibootmgr ${init} \
+  networkmanager networkmanager-${init} network-manager-applet elogind-${init} openssh
 
 fstabgen -L /mnt >> /mnt/etc/fstab
 

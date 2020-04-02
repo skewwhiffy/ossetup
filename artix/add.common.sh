@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+source pre.flight.checks.sh
+
 echo Installing common stuff
 yay -Syu --noconfirm --needed aic94xx-firmware
 yay -Syu --noconfirm --needed authy
@@ -7,12 +9,12 @@ yay -Syu --noconfirm --needed chromium
 yay -Syu --noconfirm --needed code
 yay -Syu --noconfirm --needed conky
 yay -Syu --noconfirm --needed cups
-yay -Syu --noconfirm --needed cups-runit
+yay -Syu --noconfirm --needed cups-${init}
 yay -Syu --noconfirm --needed curl
 yay -Syu --noconfirm --needed curl
 yay -Syu --noconfirm --needed dbeaver
 yay -Syu --noconfirm --needed docker
-yay -Syu --noconfirm --needed docker-runit
+yay -Syu --noconfirm --needed docker-${init}
 yay -Syu --noconfirm --needed fzf
 yay -Syu --noconfirm --needed gnome-disk-utility
 yay -Syu --noconfirm --needed gnome-system-monitor
@@ -20,6 +22,7 @@ yay -Syu --noconfirm --needed gst-libav
 yay -Syu --noconfirm --needed hplip
 yay -Syu --noconfirm --needed inetutils
 yay -Syu --noconfirm --needed jetbrains-toolbox
+yay -Syu --noconfirm --needed libreoffice-still-uk
 yay -Syu --noconfirm --needed lsb-release
 yay -Syu --noconfirm --needed mame
 yay -Syu --noconfirm --needed maven
