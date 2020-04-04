@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 source pre.flight.checks.sh
+source add.yay.sh
 
 echo Installing common stuff
 yay -Syu --noconfirm --needed aic94xx-firmware

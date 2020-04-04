@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-source ./pre.flight.checks.sh
+source pre.flight.checks.sh
+source add.yay.sh
+
 sudo pacman -Syu --noconfirm
 sudo pacman -Syu --noconfirm xorg linux-headers nvidia-dkms terminator
 sudo pacman -Syu --noconfirm lightdm lightdm-gtk-greeter lightdm-${init}
