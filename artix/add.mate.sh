@@ -2,10 +2,11 @@
 source pre.flight.checks.sh
 source add.yay.sh
 
-sudo pacman -Syu --noconfirm
-sudo pacman -Syu --noconfirm xorg linux-headers nvidia-dkms terminator
-sudo pacman -Syu --noconfirm lightdm lightdm-gtk-greeter lightdm-${init}
-sudo pacman -Syu --noconfirm mate
+yay -Syu --noconfirm
+yay -Syu --noconfirm xorg linux-headers nvidia-dkms
+yay -Syu --noconfirm lightdm lightdm-gtk-greeter lightdm-${init}
+yay -Syu --noconfirm mate mate-extra
+yay -Syu --noconfirm brisk-menu
 
 if [ $init == runit ]
 then
