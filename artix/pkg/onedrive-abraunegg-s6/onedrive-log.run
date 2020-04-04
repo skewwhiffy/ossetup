@@ -1,7 +1,0 @@
-#!/usr/bin/execlineb -P
-envfile /etc/s6/sv/onedrive-log/conf
-importas -iu DIRECTIVE DIRECTIVE
-backtick -n ARGS { pipeline { echo $DIRECTIVE } sed "s/_/ /g" }
-importas -iu ARGS ARGS
-foreground { s6-setuidgid s6log mkdir -p /var/log/onedrive }
-s6-setuidgid s6log exec -c sh -c "s6-log -d3 -b ${ARGS} /var/log/onedrive"

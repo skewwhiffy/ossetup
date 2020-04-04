@@ -1,5 +1,0 @@
-pre_remove() {
-	if [ -e "/run/service/onedrive" ]; then
-		s6-rc -d change onedrive
-	fi
-}
