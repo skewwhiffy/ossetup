@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+foreground { modprobe -q loop }
+fdmove -c 2 1
+exec nordvpnd
