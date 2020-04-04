@@ -15,6 +15,7 @@ yay -Syu --noconfirm --needed curl
 yay -Syu --noconfirm --needed dbeaver
 yay -Syu --noconfirm --needed docker
 yay -Syu --noconfirm --needed docker-${init}
+yay -Syu --noconfirm --needed emacs
 yay -Syu --noconfirm --needed fzf
 yay -Syu --noconfirm --needed gnome-disk-utility
 yay -Syu --noconfirm --needed gnome-system-monitor
