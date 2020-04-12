@@ -17,8 +17,20 @@ mv /etc/locale.gen /etc/locale.orig.gen
 sed s/#en_GB.UTF-8/en_GB.UTF-8/ /etc/locale.orig.gen >/etc/locale.gen
 locale-gen
 
+mv /etc/sudoers /etc/sudoers.orig
+sed "s/# %wheel ALL=(ALL) NOPASSWD/%wheel ALL=(ALL) NOPASSWD/" /etc/sudoers.orig >/etc/sudoers
+
+
 echo Set root password
 until passwd
+do
+  echo That did not work. Try again, please.
+done
+
+echo Adding new user
+useradd -m $user
+usermod -aG wheel $user
+until passwd $user
 do
   echo That did not work. Try again, please.
 done
@@ -32,4 +44,4 @@ else
   echo You have to link up the network service for $init
 fi
 
-echo Now exit and reboot. You should get a working system.
+echo Now reboot and login as $user. You should get a working system.

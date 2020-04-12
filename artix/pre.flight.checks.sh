@@ -7,6 +7,7 @@ then
   echo "Do you need to copy config.template over?"
   exit 1
 fi
+
 echo Getting system disk
 export disk=$(grep -Po "(?<=^disk=).+" config)
 if [ $disk == SYSTEM_DISK ]
@@ -27,4 +28,14 @@ then
   echo "You can use the following init systems: runit, s6, openrc"
   exit 1
 fi
-echo Init system is $init
+
+echo Getting user name
+export user=$(grep -Po "(?<=^user=).+" config)
+if [ $user == USER ]
+then
+  echo "***** ERROR *****"
+  echo "You need to set the user name in config"
+  exit 1
+fi
+
+echo user name is $user
