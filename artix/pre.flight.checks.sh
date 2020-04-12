@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+echo Checking for config
+if [ ! -f config ]
+then
+  echo "***** ERROR *****"
+  echo "No config file"
+  echo "Do you need to copy config.template over?"
+  exit 1
+fi
 echo Getting system disk
 export disk=$(grep -Po "(?<=^disk=).+" config)
 if [ $disk == SYSTEM_DISK ]
