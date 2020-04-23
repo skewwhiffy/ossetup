@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 hwclock --systohc
 
@@ -7,25 +8,33 @@ echo kenny-linux > /etc/hostname
 echo 127.0.0.1 localhost >> /etc/hosts
 echo ::1 localhost >> /etc/hosts
 echo 127.0.1.1 kenny-linux.localdomain kenny-linux >> /etc/hosts
+mkinitcpio -P
 
 systemctl enable dhcpcd
 
-mkinitcpio -P
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
-echo Adding user kenny
-useradd -m kenny
-groupadd sudo
-usermod -aG sudo kenny
-echo Set password for kenny
-passwd kenny
+mv /etc/locale.gen /etc/locale.orig.gen
+sed s/#en_GB.UTF-8/en_GB.UTF-8/ /etc/locale.orig.gen >/etc/locale.gen
+locale-gen
+
+mv /etc/sudoers /etc/sudoers.orig
+sed "s/# %wheel ALL=(ALL) NOPASSWD/%wheel ALL=(ALL) NOPASSWD/" /etc/sudoers.orig >/etc/sudoers
+
 
 echo Set root password
-passwd
+until passwd
+do
+  echo That did not work. Try again, please.
+done
 
-echo Uncomment en_GB.UTF-8 UTF-8 line in /etc/locale.gen
-echo Run locale-gen
-echo Reboot. You should get a working system.
-echo Run add.cinnamon.sh to install a Cinnamon desktop.
-echo Run add.gnome.sh to install a Gnome desktop.
+echo Adding new user
+useradd -m $user
+usermod -aG wheel $user
+until passwd $user
+do
+  echo That did not work. Try again, please.
+done
+
+echo Now reboot and login as $user. You should get a working system.
