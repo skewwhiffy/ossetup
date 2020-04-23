@@ -12,7 +12,6 @@ yay -Syu --noconfirm --needed conky
 yay -Syu --noconfirm --needed cups
 yay -Syu --noconfirm --needed cups-${init}
 yay -Syu --noconfirm --needed curl
-yay -Syu --noconfirm --needed curl
 yay -Syu --noconfirm --needed dbeaver
 yay -Syu --noconfirm --needed docker
 yay -Syu --noconfirm --needed docker-${init}
