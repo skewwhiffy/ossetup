@@ -1,5 +1,5 @@
-yay -Syu --noconfirm --needed -Syu
-yay -Syu --noconfirm --needed -Syu linux-headers nvidia terminator \
+yay --noconfirm --needed -Syu
+yay --noconfirm --needed -Syu linux-headers nvidia terminator \
   xorg gnome gnome-extra chrome-gnome-shell
 sudo systemctl enable gdm
 
