@@ -16,12 +16,15 @@ yay -Syu --noconfirm --needed dbeaver
 yay -Syu --noconfirm --needed docker
 yay -Syu --noconfirm --needed docker-${init}
 yay -Syu --noconfirm --needed emacs
+yay -Syu --noconfirm --needed fcitx-libpinyin
+yay -Syu --noconfirm --needed fcitx-configtool
 yay -Syu --noconfirm --needed fzf
 yay -Syu --noconfirm --needed gnome-disk-utility
 yay -Syu --noconfirm --needed gnome-system-monitor
 yay -Syu --noconfirm --needed gnome-screenshot
 yay -Syu --noconfirm --needed gst-libav
 yay -Syu --noconfirm --needed hplip
+yay -Syu --noconfirm --needed ifconfig
 yay -Syu --noconfirm --needed inetutils
 yay -Syu --noconfirm --needed jetbrains-toolbox
 yay -Syu --noconfirm --needed libreoffice-still-uk
@@ -33,6 +36,7 @@ yay -Syu --noconfirm --needed mint-y-icons
 yay -Syu --noconfirm --needed mongodb-compass-community-bin
 yay -Syu --noconfirm --needed mongodb-shell-bin
 yay -Syu --noconfirm --needed mongodb-tools-bin
+yay -Syu --noconfirm --needed net-tools
 yay -Syu --noconfirm --needed noto-fonts
 yay -Syu --noconfirm --needed noto-fonts-cjk
 yay -Syu --noconfirm --needed noto-fonts-emoji
@@ -54,6 +58,7 @@ yay -Syu --noconfirm --needed simple-scan
 yay -Syu --noconfirm --needed the_silver_searcher
 yay -Syu --noconfirm --needed tk
 yay -Syu --noconfirm --needed tmux
+yay -Syu --noconfirm --needed traceroute
 yay -Syu --noconfirm --needed ttf-iosevka
 yay -Syu --noconfirm --needed unzip
 yay -Syu --noconfirm --needed usbutils
