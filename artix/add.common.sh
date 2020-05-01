@@ -33,7 +33,7 @@ yay -Syu --noconfirm --needed mame
 yay -Syu --noconfirm --needed maven
 yay -Syu --noconfirm --needed mint-x-icons
 yay -Syu --noconfirm --needed mint-y-icons
-yay -Syu --noconfirm --needed mongodb-compass-community-bin
+yay -Syu --noconfirm --needed mongodb-compass
 yay -Syu --noconfirm --needed mongodb-shell-bin
 yay -Syu --noconfirm --needed mongodb-tools-bin
 yay -Syu --noconfirm --needed net-tools
