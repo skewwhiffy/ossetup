@@ -20,16 +20,17 @@ locale-gen
 mv /etc/sudoers /etc/sudoers.orig
 sed "s/# %wheel ALL=(ALL) NOPASSWD/%wheel ALL=(ALL) NOPASSWD/" /etc/sudoers.orig >/etc/sudoers
 
-
 echo Set root password
 until passwd
 do
   echo That did not work. Try again, please.
 done
 
-echo Adding new user
+echo Adding new user $user
 useradd -m $user
 usermod -aG wheel $user
+groupadd docker
+usermod -aG docker $user
 until passwd $user
 do
   echo That did not work. Try again, please.
@@ -37,11 +38,9 @@ done
 
 if [ $init == runit ]
 then
-  echo Linking up network service
-  mkdir -p /run/runit/service
-  ln -s /etc/runit/sv/NetworkManager /run/runit/service
+  cp rc.local.sh /etc/rc.local
 else
-  echo You have to link up the network service for $init
+  echo You have to link up the network service for $init after a reboot
 fi
 
 echo Now reboot and login as $user. You should get a working system.
