@@ -1,32 +1,37 @@
 #!/usr/bin/env bash
-source pre.flight.checks.sh
-source add.yay.sh
 
 echo Installing common stuff
+sudo apt -y install neovim \
+  xclip \
+  zsh \
+  yadm \
+  curl \
+  wget \
+  chromium \
+  fcitx-libpinyin fcitx-config-gtk \
+  silversearcher-ag \
+  gnome-disk-utility \
+  gnome-system-monitor \
+  gnome-screenshot \
+  rhythmbox \
+  maven python python-pip python2 python2-pip \
+  emacs gitk \
+  bison golang \
+  mame \
+  # cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - FOR DROPBOX
+# Enable: https://devuan.org/os/etc/apt/sources.list backports
+# jetbrains toolbox
+# curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
+
 #yay -Syu --noconfirm --needed authy https://aur.archlinux.org/packages/authy/
-sudo apt -y install chromium
 #yay -Syu --noconfirm --needed code https://github.com/VSCodium/vscodium/releases
 #yay -Syu --noconfirm --needed dbeaver https://dbeaver.io/download/
 #yay -Syu --noconfirm --needed docker
 #yay -Syu --noconfirm --needed docker-${init}
-#yay -Syu --noconfirm --needed emacs
-#yay -Syu --noconfirm --needed fcitx-libpinyin
-#yay -Syu --noconfirm --needed fcitx-configtool
-#yay -Syu --noconfirm --needed fzf
-#yay -Syu --noconfirm --needed gnome-disk-utility
-#yay -Syu --noconfirm --needed gnome-system-monitor
-#yay -Syu --noconfirm --needed gnome-screenshot
-#yay -Syu --noconfirm --needed gst-libav
 #yay -Syu --noconfirm --needed hplip
 #yay -Syu --noconfirm --needed ifconfig
 #yay -Syu --noconfirm --needed inetutils
 #yay -Syu --noconfirm --needed jetbrains-toolbox
-#yay -Syu --noconfirm --needed libreoffice-still-uk
-#yay -Syu --noconfirm --needed lsb-release
-#yay -Syu --noconfirm --needed mame
-#yay -Syu --noconfirm --needed maven
-#yay -Syu --noconfirm --needed mint-x-icons
-#yay -Syu --noconfirm --needed mint-y-icons
 #yay -Syu --noconfirm --needed mongodb-compass
 #yay -Syu --noconfirm --needed mongodb-shell-bin
 #yay -Syu --noconfirm --needed mongodb-tools-bin
@@ -49,18 +54,12 @@ sudo apt -y install chromium
 #yay -Syu --noconfirm --needed ruby
 #yay -Syu --noconfirm --needed sane
 #yay -Syu --noconfirm --needed simple-scan
-#yay -Syu --noconfirm --needed the_silver_searcher
 #yay -Syu --noconfirm --needed tk
-#yay -Syu --noconfirm --needed tmux
 #yay -Syu --noconfirm --needed traceroute
 #yay -Syu --noconfirm --needed ttf-iosevka
 #yay -Syu --noconfirm --needed unzip
 #yay -Syu --noconfirm --needed usbutils
-#yay -Syu --noconfirm --needed vlc
-#yay -Syu --noconfirm --needed wget
 #yay -Syu --noconfirm --needed wkhtmltopdf-static
-#yay -Syu --noconfirm --needed wmctrl
-#yay -Syu --noconfirm --needed xclip
 #yay -Syu --noconfirm --needed zoom
 
 echo Reboot. You should have quite a lot of your stuff setup now. See dev folder to set up dev tools.
