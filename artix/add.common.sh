@@ -68,6 +68,7 @@ yay -Syu --noconfirm --needed wget
 yay -Syu --noconfirm --needed wkhtmltopdf-static
 yay -Syu --noconfirm --needed wmctrl
 yay -Syu --noconfirm --needed xclip
+yay -Syu --noconfirm --needed xdotool
 yay -Syu --noconfirm --needed zoom
 
 echo Reboot. You should have quite a lot of your stuff setup now. See dev folder to set up dev tools.
