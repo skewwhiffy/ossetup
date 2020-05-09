@@ -31,8 +31,6 @@ yay -Syu --noconfirm --needed libreoffice-still-uk
 yay -Syu --noconfirm --needed lsb-release
 yay -Syu --noconfirm --needed mame
 yay -Syu --noconfirm --needed maven
-yay -Syu --noconfirm --needed mint-x-icons
-yay -Syu --noconfirm --needed mint-y-icons
 yay -Syu --noconfirm --needed mongodb-compass
 yay -Syu --noconfirm --needed mongodb-shell-bin
 yay -Syu --noconfirm --needed mongodb-tools-bin
@@ -50,7 +48,6 @@ yay -Syu --noconfirm --needed pinta
 yay -Syu --noconfirm --needed postman-bin
 yay -Syu --noconfirm --needed python-pip
 yay -Syu --noconfirm --needed python2-pip
-yay -Syu --noconfirm --needed redmond-themes-git
 yay -Syu --noconfirm --needed rtl88xxau-aircrack-dkms-git
 yay -Syu --noconfirm --needed ruby
 yay -Syu --noconfirm --needed sane
