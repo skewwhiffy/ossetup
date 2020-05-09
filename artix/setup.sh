@@ -36,11 +36,6 @@ do
   echo That did not work. Try again, please.
 done
 
-if [ $init == runit ]
-then
-  cp rc.local.sh /etc/rc.local
-else
-  echo You have to link up the network service for $init after a reboot
-fi
+echo You have to link up the network service for $init after a reboot
 
 echo Now reboot and login as $user. You should get a working system.
