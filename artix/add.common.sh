@@ -11,10 +11,12 @@ yay -Syu --noconfirm --needed code
 yay -Syu --noconfirm --needed conky
 yay -Syu --noconfirm --needed cups
 yay -Syu --noconfirm --needed cups-${init}
+sudo ln -s /etc/runit/sv/cups /run/runit/service
 yay -Syu --noconfirm --needed curl
 yay -Syu --noconfirm --needed dbeaver
 yay -Syu --noconfirm --needed docker
 yay -Syu --noconfirm --needed docker-${init}
+sudo ln -s /etc/runit/sv/docker /run/runit/service
 yay -Syu --noconfirm --needed emacs
 yay -Syu --noconfirm --needed fcitx-libpinyin
 yay -Syu --noconfirm --needed fcitx-configtool
@@ -46,7 +48,6 @@ yay -Syu --noconfirm --needed onedrive-abraunegg
 yay -Syu --noconfirm --needed openvpn
 yay -Syu --noconfirm --needed pinta
 yay -Syu --noconfirm --needed postman-bin
-yay -Syu --noconfirm --needed python-pip
 yay -Syu --noconfirm --needed python2-pip
 yay -Syu --noconfirm --needed rtl88xxau-aircrack-dkms-git
 yay -Syu --noconfirm --needed ruby
@@ -54,7 +55,6 @@ yay -Syu --noconfirm --needed sane
 yay -Syu --noconfirm --needed simple-scan
 yay -Syu --noconfirm --needed the_silver_searcher
 yay -Syu --noconfirm --needed tk
-yay -Syu --noconfirm --needed tmux
 yay -Syu --noconfirm --needed traceroute
 yay -Syu --noconfirm --needed ttf-iosevka
 yay -Syu --noconfirm --needed unzip
