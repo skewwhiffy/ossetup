@@ -36,8 +36,6 @@ do
   echo That did not work. Try again, please.
 done
 
-echo Attempting to make link for network. If this works, you can remove enable.network.sh
-mkdir -p /run/runit/service
-ln -s /etc/runit/sv/NetworkManager /run/runit/service
+echo You need to enable the NetworkManager service on reboot, then run first.run.sh
 
 echo Now reboot and login as $user. You should get a working system.
