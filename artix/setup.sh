@@ -36,6 +36,8 @@ do
   echo That did not work. Try again, please.
 done
 
-echo You have to link up the network service for $init after a reboot
+echo Attempting to make link for network. If this works, you can remove enable.network.sh
+mkdir -p /run/runit/service
+ln -s /etc/runit/sv/NetworkManager /run/runit/service
 
 echo Now reboot and login as $user. You should get a working system.
