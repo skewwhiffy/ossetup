@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+while ! ping -c 1 -W 1 google.com; do
+  echo No response from google. Trying again.
+  sleep 1
+done
+
+echo Network is up
+exit 0
 if [ -d /media/Docs ]; then
   echo DOCS drive already mounted
 else

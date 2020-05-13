@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
-./add.yay.sh
+echo Installing xfce
+toInstall=(
+  x
+  network-manager-applet
+  pavucontrol
+  xfce4-pulseaudio-plugin
+  xfce4
+  ksuperkey
+)
+./add.sh ${toInstall[@]}
 
-sudo pacman -Syu --noconfirm --needed
-sudo pacman -Syu --noconfirm --needed xorg xorg-xinit linux-headers nvidia-dkms
-sudo pacman -Syu --noconfirm --needed terminator network-manager-applet pavucontrol xfce4-pulseaudio-plugin
-sudo pacman -Syu --noconfirm --needed xfce4 
-yay -Syu --noconfirm --needed ksuperkey
 echo startxfce4 > $HOME/.xinitrc
 
 echo Reboot. Start x with startx.

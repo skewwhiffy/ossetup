@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-./pre.flight.checks.sh
-
 echo Installing common stuff
 toInstall=(
   aic94xx-firmware

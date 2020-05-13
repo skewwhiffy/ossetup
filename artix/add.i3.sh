@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
-sudo pacman -Syu --noconfirm
-sudo pacman -Syu --noconfirm linux-headers nvidia terminator
-sudo pacman -Syu --noconfirm lightdm lightdm-gtk-greeter lightdm-runit
-sudo pacman -Syu --noconfirm i3 j4-dmenu-desktop pavucontrol dmenu
-sudo ln -s /etc/runit/sv/lightdm /run/runit/service
+echo Installing cinnamon
+toInstall=(
+  x
+  i3
+  j4-dmenu-desktop
+  pavucontrol
+  dmenu
+)
+./add.sh ${toInstall[@]}
 
-echo Reboot. You should get a greeter. Login. Run add.common.sh to install common apps.
+echo i3 > $HOME/.xinitrc
+
+echo Reboot. Start x with startx.
