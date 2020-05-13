@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-set -e
-
 if [ $# -eq 0 ]; then
   echo Nothing to install
-  exit 0
+  return
 fi
 
 if [ $# -gt 1 ]; then
@@ -11,8 +9,13 @@ if [ $# -gt 1 ]; then
   do
     source ./add.sh $arg
   done
-  exit 0
+  return
 fi
 
 program=$1
+
+if [ -f add/$program.sh ]; then
+  source add/$program.sh
+  return
+fi
 echo installing $program
