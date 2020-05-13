@@ -4,6 +4,7 @@ toInstall=(
   x
   network-manager-applet
   pavucontrol
+  xfce4-taskmanager
   xfce4-pulseaudio-plugin
   xfce4
   ksuperkey
