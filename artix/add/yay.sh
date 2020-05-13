@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 if type -P yay &> /dev/null; then
-  echo yay already installed
   exit 0
 fi
 
