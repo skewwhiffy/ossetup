@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-set -e
-
 if [ $# -eq 0 ]; then
   echo Nothing to install
   exit 0
@@ -15,4 +13,10 @@ if [ $# -gt 1 ]; then
 fi
 
 program=$1
-echo installing $program
+if [ -f ./add/$program.sh ]; then
+  echo Calling custom install script $program.sh
+  source ./add/$program.sh
+else
+  echo Installing $program
+  echo TODO
+fi

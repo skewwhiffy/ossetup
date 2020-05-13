@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-set -e
-if type -P yay2 &> /dev/null; then
+if type -P yay &> /dev/null; then
   echo yay already installed
   exit 0
 fi
