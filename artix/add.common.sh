@@ -11,7 +11,7 @@ yay -Syu --noconfirm --needed code
 yay -Syu --noconfirm --needed conky
 yay -Syu --noconfirm --needed cups
 yay -Syu --noconfirm --needed cups-${init}
-sudo ln -s /etc/runit/sv/cups /run/runit/service
+sudo ln -s /etc/runit/sv/cupss /run/runit/service
 yay -Syu --noconfirm --needed curl
 yay -Syu --noconfirm --needed dbeaver
 yay -Syu --noconfirm --needed docker
