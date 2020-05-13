@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-while ! ping -c 1 -W 1 google.com; do
-  echo No response from google. Trying again.
-  sleep 1
-done
-
-echo Network is up
-exit 0
 if [ -d /media/Docs ]; then
   echo DOCS drive already mounted
 else
@@ -17,14 +10,28 @@ else
   cp -r /media/Docs/backup/.aws $HOME
 fi
 
-echo Checking out ossetup repo
-mkdir -p $HOME/code/personal
-cd $HOME/code/personal
-git clone git@github.com:skewwhiffy/ossetup.git
-cp /ossetup/artix/config ossetup/artix
-sudo rm -rf /ossetup
-cd ossetup/artix
+if [ -L /run/runit/service/NetworkManager ]; then
+  echo NetworkManager already running
+else
+  sudo ln -s /etc/runit/sv/NetworkManager /run/runit/service/
+  while ! ping -c 1 -W 1 google.com; do
+    echo No response from google. Trying again.
+    sleep 1
+  done
+  echo Network is up
+fi
+
+if [ -d $HOME/code/personal/ossetup ]; then
+  echo ossetup already checked out
+else
+  echo Checking out ossetup repo
+  mkdir -p $HOME/code/personal
+  cd $HOME/code/personal
+  git clone git@github.com:skewwhiffy/ossetup.git
+  cp /ossetup/artix/config ossetup/artix
+  sudo rm -rf /ossetup
+  cd ossetup/artix
+fi
 
 echo Installing vital
 ./add.vital.sh
-
