@@ -34,7 +34,7 @@ loadkeys uk
 
 basestrap /mnt base linux linux-firmware base-devel git neovim grub efibootmgr ${init} \
   networkmanager networkmanager-${init} network-manager-applet elogind-${init} openssh tmux \
-  python-pip yadm openssh zsh
+  python-pip openssh zsh
 
 fstabgen -L /mnt >> /mnt/etc/fstab
 
