@@ -37,6 +37,7 @@ yay -Syu --noconfirm --needed mongodb-compass
 yay -Syu --noconfirm --needed mongodb-shell-bin
 yay -Syu --noconfirm --needed mongodb-tools-bin
 yay -Syu --noconfirm --needed net-tools
+yay -Syu --noconfirm --needed networkmanager-openvpn
 yay -Syu --noconfirm --needed noto-fonts
 yay -Syu --noconfirm --needed noto-fonts-cjk
 yay -Syu --noconfirm --needed noto-fonts-emoji
