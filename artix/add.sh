@@ -18,5 +18,5 @@ if [ -f ./add/$program.sh ]; then
   source ./add/$program.sh
 else
   echo Installing $program
-  echo TODO
+  yay -Syu --noconfirm --needed $program
 fi

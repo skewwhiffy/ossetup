@@ -1,8 +1,81 @@
 #!/usr/bin/env bash
-source pre.flight.checks.sh
-source add.yay.sh
+./pre.flight.checks.sh
+./add.sh yay
+echo DONE
 
 echo Installing common stuff
+toInstall=(
+  aic94xx-firmware
+  authy
+  bison
+  chromium
+  code
+  conky
+  curl
+  dbeaver
+  emacs
+  fcitx-libpinyin
+  fcitx-configtool
+  fzf
+  gnome-disk-utility
+  gnome-system-monitor
+  gnome-screenshot
+  gst-libav
+  hplip
+  ifconfig
+  inetutils
+  jetbrains-toolbox
+  libreoffice-still-uk
+  lsb-release
+  mame
+  maven
+  mongodb-compass
+  mongodb-shell-bin
+  mongodb-tools-bin
+  net-tools
+  networkmanager-openvpn
+  noto-fonts
+  noto-fonts-cjk
+  noto-fonts-emoji
+  noto-fonts-extra
+  ocs-url
+  okular
+  okular
+  onedrive-abraunegg
+  openvpn
+  pinta
+  postman-bin
+  python2-pip
+  rtl88xxau-aircrack-dkms-git
+  ruby
+  sane
+  simple-scan
+  the_silver_searcher
+  tk
+  traceroute
+  ttf-iosevka
+  unzip
+  usbutils
+  vlc
+  wd719x-firmware
+  wget
+  wkhtmltopdf-static
+  wmctrl
+  xclip
+  xdotool
+  zoom
+)
+
+./add.sh ${toInstall[@]}
+exit 0
+yay -Syu --noconfirm --needed cups
+yay -Syu --noconfirm --needed cups-${init}
+sudo ln -s /etc/runit/sv/cupss /run/runit/service
+yay -Syu --noconfirm --needed docker
+yay -Syu --noconfirm --needed docker-${init}
+sudo ln -s /etc/runit/sv/docker /run/runit/service
+exit 0
+
 yay -Syu --noconfirm --needed aic94xx-firmware
 yay -Syu --noconfirm --needed authy
 yay -Syu --noconfirm --needed bison
