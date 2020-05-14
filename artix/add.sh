@@ -17,6 +17,8 @@ program=$1
 if [ -f ./add/$program.sh ]; then
   echo Calling custom install script $program.sh
   ./add/$program.sh
+elif pacman -Qi $program > /dev/null ; then
+  echo $program already installed
 else
   echo Installing $program
   yay -Syu --noconfirm --needed $program
