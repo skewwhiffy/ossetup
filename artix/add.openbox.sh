@@ -14,6 +14,6 @@ toInstall=(
 )
 ./add.sh ${toInstall[@]}
 
-echo openbox > $HOME/.xinitrc
+echo openbox-session > $HOME/.xinitrc
 
 echo Reboot. Start x with startx.
