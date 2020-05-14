@@ -6,7 +6,9 @@ toInstall=(
   pa-applet-git
   network-manager-applet
   networkmanager-openvpn
-  jwm synapse
+  ksuperkey
+  synapse
+  jwm
 )
 ./add.sh ${toInstall[@]}
 
