@@ -49,8 +49,8 @@ cp -r ../../ossetup/ /mnt/ossetup
 
 echo Installed a base system. Calling setup on your new system.
 if [ "$distribution" == "artix" ]; then
-  artools-chroot /mnt /bin/bash -c ./ossetup/artix/setup.sh
+  artools-chroot /mnt /bin/bash -c ./ossetup/arch/setup.sh
 fi
 if [ "$distribution" == "arch" ]; then
-  arch-chroot /mnt /bin/bash -c ./ossetup/artix/setup.sh
+  arch-chroot /mnt /bin/bash -c ./ossetup/arch/setup.sh
 fi
