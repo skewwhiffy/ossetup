@@ -32,9 +32,9 @@ else
   mkdir -p $HOME/code/personal
   cd $HOME/code/personal
   git clone git@github.com:skewwhiffy/ossetup.git
-  cp /ossetup/artix/config ossetup/artix
+  cp /ossetup/arch/config ossetup/arch
   sudo rm -rf /ossetup
-  cd ossetup/artix
+  cd ossetup/arch
 fi
 
 echo Installing vital
