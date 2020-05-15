@@ -7,13 +7,16 @@ fi
 
 echo Ascertaining distribution
 artixCount=$(cat /etc/*-release | grep -c Artix)
-echo ArtixCount: $artixCount
-if [ $artixCount > 0 ]; then
+if (( $artixCount > 0 )); then
   export distribution=artix
 fi
-archCount=$(cat /etc/+-release | grep -c Arch)
-if [ $archCount > 0 ]; then
+archCount=$(cat /etc/*-release | grep -c Arch)
+if (( $archCount > 0 )); then
   export distribution=arch
+fi
+if [ "$distribution" == "" ]; then
+  echo "Cannot ascertain distribution"
+  exit 1
 fi
 echo Distribution is $distribution
 
