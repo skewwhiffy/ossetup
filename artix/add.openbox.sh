@@ -5,6 +5,7 @@ toInstall=(
   pulseaudio
   pulseaudio-alsa
   pa-applet-git
+  pavucontrol
   network-manager-applet
   networkmanager-openvpn
   ksuperkey
