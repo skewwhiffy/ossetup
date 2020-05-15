@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+source pre.flight.checks.sh
+
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 hwclock --systohc
 
@@ -9,6 +11,10 @@ echo 127.0.0.1 localhost >> /etc/hosts
 echo ::1 localhost >> /etc/hosts
 echo 127.0.1.1 kenny-linux.localdomain kenny-linux >> /etc/hosts
 mkinitcpio -P
+
+if [ "$distribution" == "arch" ]; then
+  systemctl enable dhcpcd
+fi
 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -36,6 +42,8 @@ do
   echo That did not work. Try again, please.
 done
 
-echo You need to enable the NetworkManager service on reboot, then run first.run.sh
+if [ "$distribution" == "artix" ]; then
+  echo You need to enable the NetworkManager service on reboot, then run first.run.sh
+fi
 
 echo Now reboot and login as $user. You should get a working system.

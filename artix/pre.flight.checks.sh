@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-echo Checking for config
 if [ ! -f config ]
 then
+  echo No config: making file
   touch config
 fi
 
-echo Ascertaining distribution
 artixCount=$(cat /etc/*-release | grep -c Artix)
 if (( $artixCount > 0 )); then
   export distribution=artix
@@ -18,9 +17,7 @@ if [ "$distribution" == "" ]; then
   echo "Cannot ascertain distribution"
   exit 1
 fi
-echo Distribution is $distribution
 
-echo Getting system disk
 export disk=$(grep -Po "(?<=^disk=).+" config)
 if [ "$disk" == "" ]
 then
@@ -49,12 +46,10 @@ then
     echo
   done
   echo disk=$disk >> config
+  echo Installing to disk $disk
 fi
-echo Installing to disk $disk
 
-echo Getting user name
 export user=$(grep -Po "(?<=^user=).+" config)
-echo USER: $user
 if [ "$user" == "" ]
 then
   while true; do
@@ -67,5 +62,5 @@ then
     echo
   done
   echo user=$user >> config
+  echo Username is $user
 fi
-echo user name is $user

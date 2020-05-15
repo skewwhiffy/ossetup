@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+source ./pre.flight.checks.sh
+
 if [ -d /media/Docs ]; then
   echo DOCS drive already mounted
 else
@@ -10,15 +12,17 @@ else
   cp -r /media/Docs/backup/.aws $HOME
 fi
 
-if [ -L /run/runit/service/NetworkManager ]; then
-  echo NetworkManager already running
-else
-  sudo ln -s /etc/runit/sv/NetworkManager /run/runit/service/
-  while ! ping -c 1 -W 1 google.com; do
-    echo No response from google. Trying again.
-    sleep 1
-  done
-  echo Network is up
+if [ "$distribution" == "artix" ]; then
+  if [ -L /run/runit/service/NetworkManager ]; then
+    echo NetworkManager already running
+  else
+    sudo ln -s /etc/runit/sv/NetworkManager /run/runit/service/
+    while ! ping -c 1 -W 1 google.com; do
+      echo No response from google. Trying again.
+      sleep 1
+    done
+    echo Network is up
+  fi
 fi
 
 if [ -d $HOME/code/personal/ossetup ]; then
