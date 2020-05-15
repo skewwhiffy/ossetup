@@ -33,27 +33,24 @@ then
     echo Please choose again.
     echo
   done
+  echo disk=$disk >> config
 fi
-echo System disk is $disk
-exit
-
-echo Getting init system
-export init=$(grep -Po "(?<=^init=).+" config)
-if [ $init == INIT ]
-then
-  echo "***** ERROR *****"
-  echo "You need to set the init system in config"
-  echo "You can use the following init systems: runit, s6, openrc"
-  exit 1
-fi
+echo Installing to disk $disk
 
 echo Getting user name
 export user=$(grep -Po "(?<=^user=).+" config)
-if [ $user == USER ]
+echo USER: $user
+if [ "$user" == "" ]
 then
-  echo "***** ERROR *****"
-  echo "You need to set the user name in config"
-  exit 1
+  while true; do
+    echo Please enter a the primary user name
+    read -p Username: user
+    if [ "$user" != "" ]; then
+      break
+    fi
+    echo No username entered. Please try again.
+    echo
+  done
+  echo user=$user >> config
 fi
-
 echo user name is $user
