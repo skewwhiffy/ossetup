@@ -5,6 +5,18 @@ then
   touch config
 fi
 
+echo Ascertaining distribution
+artixCount=$(cat /etc/*-release | grep -c Artix)
+echo ArtixCount: $artixCount
+if [ $artixCount > 0 ]; then
+  export distribution=artix
+fi
+archCount=$(cat /etc/+-release | grep -c Arch)
+if [ $archCount > 0 ]; then
+  export distribution=arch
+fi
+echo Distribution is $distribution
+
 echo Getting system disk
 export disk=$(grep -Po "(?<=^disk=).+" config)
 if [ "$disk" == "" ]
