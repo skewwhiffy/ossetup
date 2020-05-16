@@ -47,6 +47,14 @@ fi
 echo Copying setup files
 cp -r ../../ossetup/ /mnt/ossetup
 
+echo Making temp first run file
+touch /mnt/etc/profile.d/temp.sh
+chmod +x /mnt/etc/profile.d/temp.sh
+echo '#!/usr/bin/env bash' >> /mnt/etc/profile.d/temp.sh
+echo 'cd /ossetup/arch' >> /mnt/etc/profile.d/temp.sh
+echo 'source first.run.sh' >> /mnt/etc/profile.d/temp.sh
+echo 'sudo rm /etc/profile.d/temp.sh' >> /mnt/etc/profile.d/temp.sh
+
 echo Installed a base system. Calling setup on your new system.
 if [ "$distribution" == "artix" ]; then
   artools-chroot /mnt /bin/bash -c ./ossetup/arch/setup.sh
