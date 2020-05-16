@@ -26,24 +26,10 @@ locale-gen
 mv /etc/sudoers /etc/sudoers.orig
 sed "s/# %wheel ALL=(ALL) NOPASSWD/%wheel ALL=(ALL) NOPASSWD/" /etc/sudoers.orig >/etc/sudoers
 
-echo Set root password
-until passwd
-do
-  echo That did not work. Try again, please.
-done
-
 echo Adding new user $user
 useradd -m $user
 usermod -aG wheel $user
 groupadd docker
-usermod -aG docker $user
-until passwd $user
-do
-  echo That did not work. Try again, please.
-done
+usermod -aG docker $$user
 
-if [ "$distribution" == "artix" ]; then
-  echo You need to enable the NetworkManager service on reboot, then run first.run.sh
-fi
-
-echo Now reboot and login as $user. You should get a working system.
+echo Reboot: system will install vital software
