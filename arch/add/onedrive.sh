@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+yay -Syu --noconfirm --needed onedrive-abraunegg
+if [ "$distribution" == "artix" ]; then
+  originalDirectory=$(pwd)
+  cd ../pkg/onedrive-abraunegg-runit
+  makepkg -is
+  cd $originalDirectory
+fi
+if [ "$distribution" == "arch" ]; then
+  systemctl enable --now onedrive
+fi

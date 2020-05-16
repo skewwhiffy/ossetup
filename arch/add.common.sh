@@ -32,6 +32,7 @@ toInstall=(
   mongodb-tools-bin
   net-tools
   networkmanager-openvpn
+  nordvpn
   noto-fonts
   noto-fonts-cjk
   noto-fonts-emoji
@@ -39,7 +40,7 @@ toInstall=(
   ocs-url
   okular
   okular
-  onedrive-abraunegg
+  onedrive
   openvpn
   pinta
   postman-bin
