@@ -33,8 +33,8 @@ timedatectl set-ntp true
 loadkeys uk
 
 if [ "$distribution" == "artix" ]; then
-  basestrap /mnt base linux linux-firmware base-devel git neovim grub efibootmgr ${init} \
-    networkmanager networkmanager-${init} network-manager-applet elogind-${init} openssh tmux \
+  basestrap /mnt base linux linux-firmware base-devel git neovim grub efibootmgr runit \
+    networkmanager networkmanager-runit network-manager-applet elogind-runit openssh tmux \
     python-pip openssh zsh
   fstabgen -L /mnt >> /mnt/etc/fstab
 fi

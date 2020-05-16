@@ -6,7 +6,7 @@ then
 fi
 
 artixCount=$(cat /etc/*-release | grep -c Artix)
-if (( $artixCount > 0 )); then
+if (( $artixCount > 0 )) || [ -d /run/runit/service ]; then
   export distribution=artix
 fi
 archCount=$(cat /etc/*-release | grep -c Arch)
