@@ -2,8 +2,8 @@
 yay -Syu --noconfirm --needed nordvpn-bin
 if [ "$distribution" == "artix" ]; then
   originalDirectory=$(pwd)
-  cd ../pkg/nordvpn-runit
-  makepkg -is
+  cd ./pkg/nordvpn-runit
+  makepkg -is --noconfirm --needed
   cd $originalDirectory
 fi
 if [ "$distribution" == "arch" ]; then

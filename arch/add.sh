@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source pre.flight.checks.sh
 ./add/yay.sh
 
 if [ $# -eq 0 ]; then
