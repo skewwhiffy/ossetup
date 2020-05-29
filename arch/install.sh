@@ -73,10 +73,12 @@ echo 'sudo rm /etc/profile.d/temp.sh' >> /mnt/etc/profile.d/temp.sh
 echo Installed a base system. Calling setup on your new system.
 if [ "$distribution" == "artix" ]; then
   artools-chroot /mnt /bin/bash -c ./ossetup/arch/setup.sh
+  artools-chroot /mnt /bin/bash -c ./ossetup/arch/add.vital.sh
   artools-chroot /mnt /bin/bash -c ./changePassword.sh
 fi
 if [ "$distribution" == "arch" ]; then
   arch-chroot /mnt /bin/bash -c ./ossetup/arch/setup.sh
+  arch-chroot /mnt /bin/bash -c ./ossetup/arch/add.vital.sh
   arch-chroot /mnt /bin/bash -c ./changePassword.sh
 fi
 rm /mnt/changePassword.sh
