@@ -2,6 +2,7 @@
 echo Installing KDE Plasma
 toInstall=(
   x
+  plasma-pa
   plasma-desktop
 )
 ./add.sh ${toInstall[@]}
