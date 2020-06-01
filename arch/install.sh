@@ -25,18 +25,18 @@ swapoff -a
 wipefs --all --force $disk
 parted -a optimal -s $disk -- mklabel gpt
 parted -a optimal -s $disk -- mkpart primary 512MiB -"$swap"GiB
-parted -a optimal -s $disk -- mkpart primary linux-swap -"$swap"GiB 100%
+# parted -a optimal -s $disk -- mkpart primary linux-swap -"$swap"GiB 100%
 parted -a optimal -s $disk -- mkpart ESP fat32 1MiB 512MiB
 parted -a optimal -s $disk -- set 3 boot on
 
 mkfs.ext4 -L $distribution ${disk}1
-mkswap -L swap ${disk}2
+# mkswap -L swap ${disk}2
 mkfs.fat -F 32 -n boot ${disk}3
 
 mount /dev/disk/by-label/$distribution /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
-swapon ${disk}2
+# swapon ${disk}2
 
 echo Disk formatted. Calling install.
 pacman -Sy --noconfirm pacman-contrib
