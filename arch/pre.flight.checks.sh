@@ -5,17 +5,23 @@ then
   touch config
 fi
 
-artixCount=$(cat /etc/*-release | grep -c Artix)
-if (( $artixCount > 0 )) || [ -d /run/runit/service ]; then
-  export distribution=artix
-fi
-archCount=$(cat /etc/*-release | grep -c Arch)
-if (( $archCount > 0 )); then
-  export distribution=arch
-fi
-if [ "$distribution" == "" ]; then
-  echo "Cannot ascertain distribution"
-  exit 1
+export distribution=$(grep -Po "(?<=^distribution=).+" config)
+if [ "$distribution" == "" ]
+then
+  artixCount=$(cat /etc/*-release | grep -c Artix)
+  if (( $artixCount > 0 )) || [ -d /run/runit/service ]; then
+    export distribution=artix
+  fi
+  archCount=$(cat /etc/*-release | grep -c Arch)
+  if (( $archCount > 0 )); then
+    export distribution=arch
+  fi
+  if [ "$distribution" == "" ]; then
+    echo "Cannot ascertain distribution"
+    echo "Assuming arch"
+    export distribution=arch
+  fi
+  echo distribution=$distribution >> config
 fi
 
 export disk=$(grep -Po "(?<=^disk=).+" config)
