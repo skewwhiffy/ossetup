@@ -3,9 +3,9 @@ echo Installing cinnamon
 toInstall=(
   x
   cinnamon
-  mint-themes
-  redmond-themes-git
-  mint-x-icons
+  # mint-themes
+  # redmond-themes-git
+  # mint-x-icons
 )
 ./add.sh ${toInstall[@]}
 
