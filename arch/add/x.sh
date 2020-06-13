@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-./add.sh xorg xorg-xinit linux-headers nvidia-dkms terminator
+./add.sh xorg xorg-xinit linux-headers nvidia-dkms alacritty
 
