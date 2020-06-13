@@ -37,12 +37,12 @@ loadkeys uk
 if [ "$distribution" == "artix" ]; then
   basestrap /mnt base linux linux-firmware base-devel git neovim grub efibootmgr runit \
     networkmanager networkmanager-runit network-manager-applet elogind-runit openssh tmux \
-    python-pip openssh fish
+    python-pip openssh zsh
   fstabgen -L /mnt >> /mnt/etc/fstab
 fi
 if [ "$distribution" == "arch" ]; then
   pacstrap /mnt base linux linux-firmware base-devel dhcpcd git neovim grub efibootmgr \
-    networkmanager network-manager-applet openssh fish python-pip
+    networkmanager network-manager-applet openssh zsh python-pip
   genfstab -U /mnt >> /mnt/etc/fstab
 fi
 

@@ -30,6 +30,6 @@ echo Adding new user $user
 useradd -m $user
 usermod -aG wheel $user
 groupadd docker
-usermod -aG docker $$user
+usermod -aG docker $user
 
 echo Reboot: system will install vital software
