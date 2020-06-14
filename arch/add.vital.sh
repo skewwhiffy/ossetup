@@ -4,7 +4,6 @@ source ./pre.flight.checks.sh
 toInstall=(
   yadm
   fish
-  antibody
   openssh
   tmux
   neovim
