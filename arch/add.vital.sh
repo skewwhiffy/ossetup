@@ -16,3 +16,8 @@ toInstall=(
 sudo chsh -s /usr/bin/zsh
 sudo chsh $user -s /usr/bin/zsh
 
+yadm init
+yadm remote add git@github.com:skewwhiffy/yadm.git
+rm ~/.zshrc*
+yadm fetch
+yadm checkout master
