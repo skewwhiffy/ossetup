@@ -31,5 +31,9 @@ useradd -m $user -s /usr/bin/fish
 usermod -aG wheel $user
 groupadd docker
 usermod -aG docker $user
+su -c "mkdir -p /home/$user/.config/fish" $user
+su -c "touch /home/$user/.config/fish/config.fish" $user
+echo "bash /etc/profile.d/temp.sh" >> /home/$user/.config/fish/config.fish
+echo "rm ~/.config/fish/config.fish" >> /home/$user/.config/fish/config.fish
 
 echo Reboot: system will install vital software
