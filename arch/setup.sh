@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+if ! (cat /etc/pam.d/chsh | grep auth | grep sufficient | grep pam_wheel.so | grep trust | grep -q group\=chsh) ; then
+  echo "auth sufficient pam_wheel.so trust group=chsh" | sudo tee -a /etc/pam.d/chsh
+fi
+
 source pre.flight.checks.sh
 
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
