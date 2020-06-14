@@ -37,9 +37,10 @@ then
       i=$((i+1))
     done
     read -p 'Your choice: ' choiceIndex
+    echo "You chose $choiceIndex"
     i=1
     for choice in $choices; do
-      if [ "$choiceIndex" == $i || "$choiceIndex" == "$choice" ]; then
+      if [ "$choiceIndex" == $i ] || [ "$choiceIndex" == "$choice" ]; then
         disk=$choice
       fi
       i=$((i+1))
@@ -60,7 +61,7 @@ if [ "$user" == "" ]
 then
   while true; do
     echo Please enter a the primary user name
-    read -p Username: user
+    read -p 'Username: ' user
     if [ "$user" != "" ]; then
       break
     fi
