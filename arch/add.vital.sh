@@ -10,3 +10,7 @@ toInstall=(
   python-pip
 )
 ./add.sh ${toInstall[@]}
+
+sudo chsh -s /usr/bin/zsh
+chsh -s /usr/bin/zsh
+

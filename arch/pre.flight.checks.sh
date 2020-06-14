@@ -39,7 +39,7 @@ then
     read -p 'Your choice: ' choiceIndex
     i=1
     for choice in $choices; do
-      if [ "$choiceIndex" == $i ]; then
+      if [ "$choiceIndex" == $i || "$choiceIndex" == "$choice" ]; then
         disk=$choice
       fi
       i=$((i+1))

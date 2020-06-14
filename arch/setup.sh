@@ -31,5 +31,7 @@ useradd -m $user -s /usr/bin/zsh
 usermod -aG wheel $user
 groupadd docker
 usermod -aG docker $user
+groupadd chsh
+usermod -aG chsh $user
 
 echo Reboot: system will install vital software
