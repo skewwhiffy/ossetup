@@ -60,10 +60,6 @@ echo '#!/usr/bin/env bash' >> /mnt/etc/profile.d/temp.sh
 echo 'cd /ossetup/arch' >> /mnt/etc/profile.d/temp.sh
 echo 'source first.run.sh' >> /mnt/etc/profile.d/temp.sh
 echo 'sudo rm /etc/profile.d/temp.sh' >> /mnt/etc/profile.d/temp.sh
-mkdir -p /mnt/home/$user/.config/fish
-touch /mnt/home/$user/.config/fish/config.fish
-echo 'bash /etc/profile.d/temp.sh' >> /mnt/home/$user/.config/fish/config.fish
-echo 'sudo rm ~/.config/fish/config.fish' >> /mnt/home/$user/.config/fish/config.fish
 
 echo Installed a base system. Calling setup on your new system.
 if [ "$distribution" == "artix" ]; then
