@@ -27,7 +27,7 @@ mv /etc/sudoers /etc/sudoers.orig
 sed "s/# %wheel ALL=(ALL) NOPASSWD/%wheel ALL=(ALL) NOPASSWD/" /etc/sudoers.orig >/etc/sudoers
 
 echo Adding new user $user
-useradd -m $user
+useradd -m $user -s /usr/bin/zsh
 usermod -aG wheel $user
 groupadd docker
 usermod -aG docker $user

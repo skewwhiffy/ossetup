@@ -39,3 +39,6 @@ fi
 
 echo Installing vital
 ./add.vital.sh
+
+echo Changing shell for root
+sudo chsh -s /usr/bin/zsh
