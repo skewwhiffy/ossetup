@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-echo Installing the first few so that you can get on with other stuff.
 source ./pre.flight.checks.sh
 
 toInstall=(

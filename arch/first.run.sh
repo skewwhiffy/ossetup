@@ -39,3 +39,7 @@ fi
 
 echo Installing vital
 ./add.vital.sh
+
+sudo chsh -s /usr/bin/zsh
+sudo chsh $user -s /usr/bin/zsh
+
