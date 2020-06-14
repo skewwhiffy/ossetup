@@ -14,9 +14,9 @@ toInstall=(
 
 sudo chsh -s /usr/bin/zsh
 sudo chsh $user -s /usr/bin/zsh
+sudo rm ~/.zshrc*
 
 yadm init
-yadm remote add git@github.com:skewwhiffy/yadm.git
-rm ~/.zshrc*
+yadm remote add origin git@github.com:skewwhiffy/yadm.git
 yadm fetch
 yadm checkout master
