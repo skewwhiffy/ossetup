@@ -3,7 +3,7 @@
 echo Installing common stuff
 sudo apt -y install neovim \
   xclip \
-  zsh \
+  fish \
   yadm \
   curl \
   wget \

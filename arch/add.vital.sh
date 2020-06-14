@@ -3,7 +3,7 @@ source ./pre.flight.checks.sh
 
 toInstall=(
   yadm
-  zsh
+  fish
   antibody
   openssh
   tmux
@@ -12,9 +12,8 @@ toInstall=(
 )
 ./add.sh ${toInstall[@]}
 
-sudo chsh -s /usr/bin/zsh
-sudo chsh $user -s /usr/bin/zsh
-sudo rm ~/.zshrc*
+sudo chsh -s /usr/bin/fish
+sudo chsh $user -s /usr/bin/fish
 
 yadm init
 yadm remote add origin git@github.com:skewwhiffy/yadm.git
