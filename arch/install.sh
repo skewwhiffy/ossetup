@@ -71,3 +71,6 @@ if [ "$distribution" == "arch" ]; then
   arch-chroot /mnt /bin/bash -c ./changePassword.sh
 fi
 rm /mnt/changePassword.sh
+
+echo Rebooting. Login, I will install more stuff for you.
+reboot
