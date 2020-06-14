@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-if ! (cat /etc/pam.d/chsh | grep auth | grep sufficient | grep pam_wheel.so | grep trust | grep -q group\=chsh) ; then
-  echo "auth sufficient pam_wheel.so trust group=chsh" | sudo tee -a /etc/pam.d/chsh
-fi
-
 source pre.flight.checks.sh
 
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
@@ -32,10 +28,9 @@ sed "s/# %wheel ALL=(ALL) NOPASSWD/%wheel ALL=(ALL) NOPASSWD/" /etc/sudoers.orig
 
 echo Adding new user $user
 useradd -m $user -s /usr/bin/zsh
+touch /home/$user/.zshrc
 usermod -aG wheel $user
 groupadd docker
 usermod -aG docker $user
-groupadd chsh
-usermod -aG chsh $user
 
 echo Reboot: system will install vital software
