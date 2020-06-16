@@ -34,17 +34,18 @@ pacman -Sy --noconfirm pacman-contrib
 timedatectl set-ntp true
 loadkeys uk
 
-if [ "$distribution" == "artix" ]; then
-  basestrap /mnt base linux linux-firmware base-devel git neovim grub efibootmgr runit \
-    networkmanager networkmanager-runit network-manager-applet elogind-runit openssh tmux \
-    python-pip openssh fish
-  fstabgen -L /mnt >> /mnt/etc/fstab
-fi
+strapCommand=basestrap
 if [ "$distribution" == "arch" ]; then
-  pacstrap /mnt base linux linux-firmware base-devel dhcpcd git neovim grub efibootmgr \
-    networkmanager network-manager-applet openssh fish python-pip
-  genfstab -U /mnt >> /mnt/etc/fstab
+  strapCommand=pacstrap
 fi
+strapCommand+=" /mnt base linux linux-firmware base-devel git neovim grub efibootmgr networkmanager "
+strapCommand+="network-manager-applet openssh tmux fish python-pip"
+if [ "$distribution" == "artix" ]; then
+  strapCommand+=" runit networkmanager-runit elogind-runit"
+else
+  strapCommand+=" dhcpcd"
+fi
+eval $strapCommand
 
 echo Copying setup files
 cp -r ../../ossetup/ /mnt/ossetup
