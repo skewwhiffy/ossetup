@@ -16,6 +16,10 @@ then
   if (( $archCount > 0 )); then
     export distribution=arch
   fi
+  manjaroCount=$(cat /etc/*-release | grep -c Manjaro)
+  if (( $manjaroCount > 0 )); then
+    export distribution=manjaro
+  fi
   if [ "$distribution" == "" ]; then
     echo "Cannot ascertain distribution"
     echo "Assuming arch"
