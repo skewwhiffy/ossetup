@@ -63,14 +63,15 @@ echo 'source first.run.sh' >> /mnt/etc/profile.d/temp.sh
 echo 'sudo rm /etc/profile.d/temp.sh' >> /mnt/etc/profile.d/temp.sh
 
 echo Installed a base system. Calling setup on your new system.
-if [ "$distribution" == "artix" ]; then
-  artools-chroot /mnt /bin/bash -c ./ossetup/arch/setup.sh
-  artools-chroot /mnt /bin/bash -c ./changePassword.sh
-fi
+chrootCommand=artools-chroot
 if [ "$distribution" == "arch" ]; then
-  arch-chroot /mnt /bin/bash -c ./ossetup/arch/setup.sh
-  arch-chroot /mnt /bin/bash -c ./changePassword.sh
+	distribution=arch-chroot
+elif [ "$distribution" == "manjaro" ]; then
+	distribution=manjaro-chroot
 fi
+chrootCommand+=" /mnt /bin/bach -c "
+eval $chrootCommand ./ossetup/arch/setup.sh
+eval $chrootCommand ./changePassword.sh
 rm /mnt/changePassword.sh
 
 echo Rebooting. Login, I will install more stuff for you.
