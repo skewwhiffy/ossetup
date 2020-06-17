@@ -5,5 +5,5 @@ if [ "$distribution" == "artix" ]; then
   sudo ln -s /etc/runit/sv/cupsd /run/runit/service/
 fi
 if [ "$distribution" == "arch" ]; then
-  systemctl enable --now cupsd
+  systemctl enable --now org.cups.cupsd.service
 fi
