@@ -69,7 +69,7 @@ if [ "$distribution" == "arch" ]; then
 elif [ "$distribution" == "manjaro" ]; then
 	distribution=manjaro-chroot
 fi
-chrootCommand+=" /mnt /bin/bach -c "
+chrootCommand+=" /mnt /bin/bash -c "
 eval $chrootCommand ./ossetup/arch/setup.sh
 eval $chrootCommand ./changePassword.sh
 rm /mnt/changePassword.sh
