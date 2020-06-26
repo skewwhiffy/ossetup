@@ -42,7 +42,10 @@ sudo apt -y install \
   mame \
   xdotool \
   wmctrl \
-  network-manager
+  network-manager \
+  libcurl4-openssl-dev \
+  libsqlite3-dev \
+  libnotify-dev
 
 sudo usermod -aG docker $(whoami)
 
@@ -63,10 +66,29 @@ fi
 if ! type -P ksuperkey &> /dev/null; then
   echo Installing ksuperkey
   cd ~/code/third.party
+  rm -rf ksuperkey
   git clone https://github.com/hanschen/ksuperkey
   cd ksuperkey
   make
   sudo make install
+fi
+
+if ! type -P onedrive &> /dev/null; then
+  echo Installing onedrive
+  cd ~/code/third.party
+  rm -rf onedrive
+  git clone https://github.com/abraunegg/onedrive
+  cd onedrive
+  curl -fsS https://dlang.org/install.sh | bash -s dmd
+  sudo update-alternatives --install "/usr/bin/ld" "ld" "/usr/bin/ld.gold" 20
+  sudo update-alternatives --install "/usr/bin/ld" "ld" "/usr/bin/ld.bfd" 10
+  dmd_folder=$(ls ~/dlang | grep dmd)
+  source ~/dlang/$dmd_folder/activate
+  ./configure
+  make clean
+  make
+  sudo make install
+  source ~/dlang/$dmd_folder/deactivate
 fi
 
 if [ ! -d ~/code/third.party/rtl8812au ]; then
