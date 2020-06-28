@@ -26,6 +26,9 @@ sudo apt install -y \
   automake \
   libtool \
   libtool-bin \
+  mongo-tools \
+  okular \
+  onedrive \
   gettext \
   xclip \
   fcitx-libpinyin \
@@ -72,24 +75,6 @@ if ! type -P ksuperkey &> /dev/null; then
   sudo make install
 fi
 
-if ! type -P onedrive &> /dev/null; then
-  echo Installing onedrive
-  cd ~/code/third.party
-  rm -rf onedrive
-  git clone https://github.com/abraunegg/onedrive
-  cd onedrive
-  curl -fsS https://dlang.org/install.sh | bash -s dmd
-  sudo update-alternatives --install "/usr/bin/ld" "ld" "/usr/bin/ld.gold" 20
-  sudo update-alternatives --install "/usr/bin/ld" "ld" "/usr/bin/ld.bfd" 10
-  dmd_folder=$(ls ~/dlang | grep dmd)
-  source ~/dlang/$dmd_folder/activate
-  ./configure
-  make clean
-  make
-  sudo make install
-  source ~/dlang/$dmd_folder/deactivate
-fi
-
 if ! type -P codium &> /dev/null; then
   echo Installing Codium
   wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add -
@@ -100,16 +85,11 @@ fi
 #yay -Syu --noconfirm --needed code https://github.com/VSCodium/vscodium/releases
 #yay -Syu --noconfirm --needed dbeaver https://dbeaver.io/download/
 #yay -Syu --noconfirm --needed mongodb-compass
-#yay -Syu --noconfirm --needed mongodb-shell-bin
-#yay -Syu --noconfirm --needed mongodb-tools-bin
 #yay -Syu --noconfirm --needed noto-fonts
 #yay -Syu --noconfirm --needed noto-fonts-cjk
 #yay -Syu --noconfirm --needed noto-fonts-emoji
 #yay -Syu --noconfirm --needed noto-fonts-extra
 #yay -Syu --noconfirm --needed ocs-url
-#yay -Syu --noconfirm --needed okular
-#yay -Syu --noconfirm --needed okular
-#yay -Syu --noconfirm --needed onedrive-abraunegg
 #yay -Syu --noconfirm --needed openvpn
 #yay -Syu --noconfirm --needed pinta
 #yay -Syu --noconfirm --needed postman-bin
