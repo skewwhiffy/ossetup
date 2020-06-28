@@ -52,6 +52,16 @@ sudo usermod -aG docker $(whoami)
 echo Installing third party software
 mkdir -p ~/code/third.party
 
+if [ ! -d ~/code/third.party/rtl8812au ]; then
+  echo Installing RTL 8812 AU driver
+  cd ~/code/third.party
+  git clone https://github.com/gnab/rtl8812au.git
+  cd rtl8812au
+  make
+  sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+  sudo depmod
+fi
+
 if ! type -P ksuperkey &> /dev/null; then
   echo Installing ksuperkey
   cd ~/code/third.party
