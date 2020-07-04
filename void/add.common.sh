@@ -10,4 +10,11 @@ sudo xbps-install -Syu \
   xfce4-whiskermenu-plugin xfce4-screensaver \
   xdpyinfo xdotool wmctrl xwininfo \
   apache-maven python3-pip \
-  rhythmbox pulseaudio xfce4-pulseaudio-plugin
+  rhythmbox pulseaudio xfce4-pulseaudio-plugin \
+  chromium \
+  vscode \
+  hplip \
+  fcitx fcitx-libpinyin fcitx-configtool \
+  dbeaver \
+  rtl8812au-dkms \
+  mit-krb5-devel
