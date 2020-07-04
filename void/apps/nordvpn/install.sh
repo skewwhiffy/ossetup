@@ -7,6 +7,9 @@ echo Downloading latest version of nordvpn
 rm -f nordvpn.deb
 wget -O nordvpn.deb $url
 
+echo Installing bsdtar
+sudo xbps-install -Sy bsdtar
+
 echo Extracting package
 rm -rf workspace
 mkdir ./workspace
