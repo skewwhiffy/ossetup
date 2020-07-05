@@ -45,7 +45,8 @@ sudo apt -y install \
   network-manager \
   libcurl4-openssl-dev \
   libsqlite3-dev \
-  libnotify-dev
+  libnotify-dev \
+  mongo-tools
 
 sudo usermod -aG docker $(whoami)
 
