@@ -39,7 +39,7 @@ if [ "$distribution" == "arch" ]; then
   strapCommand=pacstrap
 fi
 strapCommand+=" /mnt base linux linux-firmware base-devel git neovim grub efibootmgr networkmanager "
-strapCommand+="network-manager-applet openssh tmux fish python-pip"
+strapCommand+="network-manager-applet openssh"
 if [ "$distribution" == "artix" ]; then
   strapCommand+=" runit networkmanager-runit elogind-runit"
 else
