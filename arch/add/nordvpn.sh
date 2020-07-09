@@ -7,5 +7,5 @@ if [ "$distribution" == "artix" ]; then
   cd $originalDirectory
 fi
 if [ "$distribution" == "arch" ]; then
-  systemctl enable --now onedrive
+  sudo systemctl enable --now nordvpn
 fi

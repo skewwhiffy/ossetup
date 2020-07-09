@@ -5,6 +5,6 @@ if [ "$distribution" == "artix" ]; then
   sudo ln -s /etc/runit/sv/docker /run/runit/service/
 fi
 if [ "$distribution" == "arch" ]; then
-  systemctl enable --now docker
+  sudo systemctl enable --now docker
 fi
 
