@@ -4,6 +4,7 @@ toInstall=(
   x
   gdm
   gdm-runit
+  gnome-shell
 )
 ./add.sh ${toInstall[@]}
 
