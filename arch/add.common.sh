@@ -58,7 +58,6 @@ toInstall=(
   vlc
   wd719x-firmware
   wget
-  wkhtmltopdf-static
   wmctrl
   xclip
   xdotool
