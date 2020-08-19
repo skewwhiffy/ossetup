@@ -74,5 +74,5 @@ eval $chrootCommand ./ossetup/arch/setup.sh
 eval $chrootCommand ./changePassword.sh
 rm /mnt/changePassword.sh
 
-echo Rebooting. Login, I will install more stuff for you.
-reboot
+# echo Rebooting. Login, I will install more stuff for you.
+# reboot
