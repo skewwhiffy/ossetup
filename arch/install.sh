@@ -65,9 +65,9 @@ echo 'sudo rm /etc/profile.d/temp.sh' >> /mnt/etc/profile.d/temp.sh
 echo Installed a base system. Calling setup on your new system.
 chrootCommand=artools-chroot
 if [ "$distribution" == "arch" ]; then
-	distribution=arch-chroot
+	chrootCommand=arch-chroot
 elif [ "$distribution" == "manjaro" ]; then
-	distribution=manjaro-chroot
+	chrootCommand=manjaro-chroot
 fi
 chrootCommand+=" /mnt /bin/bash -c "
 eval $chrootCommand ./ossetup/arch/setup.sh
