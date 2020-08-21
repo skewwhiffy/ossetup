@@ -16,6 +16,7 @@ toInstall=(
   fcitx-configtool
   fzf
   gnome-disk-utility
+  gnome-mahjongg
   gnome-system-monitor
   gnome-screenshot
   gst-libav
