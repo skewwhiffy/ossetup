@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Authy
+Comment=MFA on your desktop
+GenericName=MFA
+X-GNOME-FullName=Authy
+Exec=/home/kenny/code/personal/ossetup/authy/authy/authy
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/kenny/code/personal/ossetup/authy/authy/meta/gui/icon.png
+StartupWMClass=Authy
+StartupNotify=true

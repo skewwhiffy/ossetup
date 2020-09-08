@@ -14,3 +14,5 @@ if [ ! -f authy.snap ]; then
 fi
 
 unsquashfs -q -f -d authy authy.snap
+
+cp ./authy.desktop ~/.local/share/applications/
