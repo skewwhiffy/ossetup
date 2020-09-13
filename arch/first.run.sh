@@ -16,6 +16,7 @@ if [ "$distribution" == "artix" ]; then
   if [ -L /run/runit/service/NetworkManager ]; then
     echo NetworkManager already running
   else
+    sudo chmod 4711 /usr/bin/ping
     sudo ln -s /etc/runit/sv/NetworkManager /run/runit/service/
     while ! ping -c 1 -W 1 google.com; do
       echo No response from google. Trying again.
