@@ -13,6 +13,6 @@ if [ ! -f authy.snap ]; then
   wget -O authy.snap $source
 fi
 
-unsquashfs -q -f -d authy authy.snap
+unsquashfs -f -d authy authy.snap
 
 cp ./authy.desktop ~/.local/share/applications/
