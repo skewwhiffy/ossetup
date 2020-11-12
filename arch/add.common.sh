@@ -6,12 +6,10 @@ toInstall=(
   bison
   chromium
   code
-  conky
   cups
   curl
   dbeaver
   docker
-  emacs
   fcitx-libpinyin
   fcitx-configtool
   fzf
@@ -24,13 +22,12 @@ toInstall=(
   ifconfig
   inetutils
   jetbrains-toolbox
-  libreoffice-still-uk
   lsb-release
-  mame
   maven
   mongodb-compass
   mongodb-shell-bin
   mongodb-tools-bin
+  nerd-fonts-iosevka
   net-tools
   networkmanager-openvpn
   nordvpn
@@ -40,12 +37,9 @@ toInstall=(
   noto-fonts-extra
   ocs-url
   okular
-  okular
   onedrive
   openvpn
-  pinta
   postman-bin
-  python2-pip
   rtl88xxau-aircrack-dkms-git
   ruby
   sane
@@ -53,7 +47,6 @@ toInstall=(
   the_silver_searcher
   tk
   traceroute
-  ttf-iosevka
   unzip
   usbutils
   vlc
