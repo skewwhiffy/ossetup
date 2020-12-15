@@ -1,0 +1,32 @@
+Artix installation instructions
+
+* loadkeys uk
+* partition disks
+* mkfs.ext4 -L ROOT /dev/sda2
+* mkfs.fat -F 32 /dev/sda1
+* fatlabel /dev/sda1 BOOT
+* mount /dev/disk/by-label/ROOT /mnt
+* mkdir /mnt/boot
+* mount /dev/disk/by-label/BOOT /mnt/boot
+* basestrap /mnt base base-devel openrc linux linux-firmware
+* fstabgen -L /mnt >> /mnt/etc/fstab
+* artool-chroot /mnt
+
+In new environment
+* ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
+* hwclock --systohc
+* edit /etc/locale.gen, uncomment out the one you want
+* locale-gen
+* passwd to set root password
+* set /etc/hostname
+* /etc/hosts add 127.0.0.1 localhost / ::1 localhost / 127.0.1.1 kenny-linux.localdomain kenny-linux
+* install + enable networkmanager (rc-update add network-manager)
+* install grub efibootmgr
+* grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+* grub-mkconfig -o /boot/grub/grub.cfg
+* exit
+
+Back in live environment
+* umount -R /mnt
+* reboot
+* tada
