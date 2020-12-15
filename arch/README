@@ -17,6 +17,8 @@ In new environment
 * hwclock --systohc
 * edit /etc/locale.gen, uncomment out the one you want
 * locale-gen
+* /etc/locale.conf LANG=en_GB.UTF-8
+* /etc/vconsole.conf KEYMAP=uk
 * passwd to set root password
 * set /etc/hostname
 * /etc/hosts add 127.0.0.1 localhost / ::1 localhost / 127.0.1.1 kenny-linux.localdomain kenny-linux
