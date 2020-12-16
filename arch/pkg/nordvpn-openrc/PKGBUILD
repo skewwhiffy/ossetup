@@ -1,0 +1,15 @@
+# Maintainer: Kenny Hung
+
+pkgname=nordvpn-openrc
+pkgver=202012161107
+pkgrel=1
+pkgdesc="openrc service scripts for nordvpn"
+arch=('any')
+url="https://github.com/artix-linux"
+depends=('nordvpn-bin' 'openrc')
+source=("nordvpnd.initd")
+sha256sums=('1cb77c5a8152f38de8bc5809e7b446a045b846cbaf57a39dd160ea18794284c2')
+
+package() {
+	install -Dm755 "$srcdir/nordvpnd.initd" "$pkgdir/etc/init.d/nordvpnd"
+}

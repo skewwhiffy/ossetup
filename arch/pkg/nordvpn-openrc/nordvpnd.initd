@@ -1,0 +1,11 @@
+#!/usr/bin/openrc-run
+
+description="Nord VPN background daemon"
+command="/usr/bin/nordvpnd"
+pidfile="/run/nordvpnd.pid"
+command_background="yes"
+
+depend() {
+  use net
+  after logger
+}
