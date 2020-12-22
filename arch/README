@@ -8,9 +8,15 @@ Artix installation instructions
 * mount /dev/disk/by-label/ROOT /mnt
 * mkdir /mnt/boot
 * mount /dev/disk/by-label/BOOT /mnt/boot
-* basestrap /mnt base base-devel openrc linux linux-firmware
-* fstabgen -L /mnt >> /mnt/etc/fstab
-* artool-chroot /mnt
+* (Parabola) update keys: pacman -Sy archlinux-keyring archlinuxarm-keyring parabola-keyring
+* (Parabola) update keys (II): pacman -U https://www.parabola.nu/packages/core/i686/archlinux32-keyring-transition/download/
+* (Parabola) update keys (III): if needed: pacman-key --refresh-keys
+* (Artix) basestrap /mnt base base-devel openrc linux linux-firmware
+* (Parabola) pacstrap /mnt base libelogind udev-init-scripts linux-libre-lts
+* (Artix) fstabgen -L /mnt >> /mnt/etc/fstab
+* (Parabola) genfstab -L /mnt >> /mnt/etc/fstab
+* (Artix) artools-chroot /mnt
+* (Parabola) arch-chroot Mnt
 
 In new environment
 * ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
@@ -20,9 +26,11 @@ In new environment
 * /etc/locale.conf LANG=en_GB.UTF-8
 * /etc/vconsole.conf KEYMAP=uk
 * passwd to set root password
-* set /etc/hostname
+* (SystemD) set /etc/hostname
+* (OpenRC) /etc/conf.d/hostname hostname='kenny-linux'
 * /etc/hosts add 127.0.0.1 localhost / ::1 localhost / 127.0.1.1 kenny-linux.localdomain kenny-linux
-* install + enable networkmanager (rc-update add network-manager)
+* install + enable networkmanager (rc-update add NetworkManager default)
+* (Parabola) install openrc-desktop elogind
 * install grub efibootmgr
 * grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 * grub-mkconfig -o /boot/grub/grub.cfg
