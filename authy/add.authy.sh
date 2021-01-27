@@ -5,7 +5,7 @@ _snaprev="5"
 source="https://api.snapcraft.io/api/v1/snaps/download/${_snapid}_${_snaprev}.snap"
 
 if ! command -v unsquashfs &> /dev/null; then
-  echo Please install squshfs-tools
+  echo Please install squashfs-tools
   exit
 fi
 
