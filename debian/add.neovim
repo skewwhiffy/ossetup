@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+sudo apt install make cmake build-essential pkg-config libunibilium-dev \
+  libtool-bin unzip luarocks gettext
+
+mkdir -p ~/code/third.party
 cd ~/code/third.party
 rm -rf neovim
 git clone https://github.com/neovim/neovim
+cd neovim
+
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
