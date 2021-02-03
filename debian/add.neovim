@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cd ~/code/third.party
+rm -rf neovim
+git clone https://github.com/neovim/neovim
