@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt install make cmake build-essential pkg-config libunibilium-dev \
+sudo apt install -y make cmake build-essential pkg-config libunibilium-dev \
   libtool-bin unzip luarocks gettext
 
 mkdir -p ~/code/third.party
