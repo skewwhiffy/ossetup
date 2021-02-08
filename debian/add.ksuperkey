@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+sudo apt install -y gcc make libx11-dev libxtst-dev pkg-config
+
+mkdir -p ~/code/third.party
+cd ~/code/third.party
+rm -rf ksuperkey
+git clone https://github.com/hanschen/ksuperkey
+cd ksuperkey
+make
+sudo make install
+
