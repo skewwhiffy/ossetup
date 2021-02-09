@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+mkdir -p ~/code/third.party
+cd ~/code/third.party
+rm -rf ksuperkey
+git clone https://github.com/hanschen/ksuperkey
+cd ksuperkey
+make
+sudo make install
+
