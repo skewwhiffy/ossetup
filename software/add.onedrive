@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+mkdir -p ~/code/third.party
+cd ~/code/third.party
+rm -rf onedrive
+git clone https://github.com/abraunegg/onedrive
+cd onedrive
+
+./configure
+make clean
+make
+sudo make install

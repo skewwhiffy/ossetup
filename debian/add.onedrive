@@ -5,13 +5,4 @@ curl -fsS https://dlang.org/install.sh | bash -s dmd
 dmd_version=`ls ~/dlang | grep dmd`
 source ~/dlang/$dmd_version/activate
 
-mkdir -p ~/code/third.party
-cd ~/code/third.party
-rm -rf onedrive
-git clone https://github.com/abraunegg/onedrive
-cd onedrive
-
-./configure
-make clean
-make
-sudo make install
+../software/add.onedrive

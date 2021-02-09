@@ -1,4 +1,4 @@
 #!/bin/sh -e
 exec 2>&1
 export HOME=/home/kenny
-exec chpst -u kenny /bin/onedrive --monitor
+exec chpst -u kenny /usr/local/bin/onedrive --monitor
