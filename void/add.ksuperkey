@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-sudo xbps-install -y pkg-config libX11-devel libXtst-devel
-
-../software/add.ksuperkey
