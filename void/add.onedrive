@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo xbps-install -y dmd libcurl-devel sqlite-devel
+sudo xbps-install -y dmd libcurl-devel sqlite-devel pkg-config
 
 ../software/add.onedrive
 cd apps/onedrive
