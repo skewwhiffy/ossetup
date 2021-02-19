@@ -6,3 +6,4 @@ if ! grep -q fs\.inotify\.max_user_watches /etc/sysctl.conf; then
 else
   echo inofity already set
 fi
+
