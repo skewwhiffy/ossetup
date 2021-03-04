@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+dconf dump /org/cinnamon/desktop/keybindings/ > cinnamon.keybindings.conf
+
