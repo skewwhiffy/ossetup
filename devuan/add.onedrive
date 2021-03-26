@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cd ../debian
+
+./add.onedrive
+
+cd ../devuan
+
+sudo cp -r ./init/runit/onedrive /etc/sv/onedrive
