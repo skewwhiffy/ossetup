@@ -1,11 +1,24 @@
 #! /bin/sh
 
 NAME=onedrive
+PIDFILE=/run/onedrive/$NAME.pid
+DESC="Onedrive (abraunegg) sysv service"
+DAEMON=/usr/local/bin/onedrive
 
-test -x /usr/local/bin/onedrive || exit 0
+test -x $DAEMON || exit 0
+
+. /lib/lsb/init-functions
+
+dummy() {
+  echo Home is $HOME
+  echo I am `whoami`
+}
 
 start() {
-  echo ABOUT TO START
+  log_daemon_msg "ABOUT TO START $DESC" "$NAME"
+  export HOME=/home/kenny
+  runuser -u kenny -- /usr/local/bin/onedrive --monitor &
+  echo STARTED
 }
 
 stop() {
