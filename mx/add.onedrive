@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cd ../debian
+
+./add.onedrive
+
+cd ../mx
+
+sudo cp -r ./init/sysv/onedrive /etc/init.d/onedrive
