@@ -5,7 +5,7 @@ sudo apt install -y make cmake build-essential pkg-config libunibilium-dev \
 
 mkdir -p ~/code/third.party
 cd ~/code/third.party
-rm -rf neovim
+sudo rm -rf neovim
 git clone https://github.com/neovim/neovim
 cd neovim
 
