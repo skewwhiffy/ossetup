@@ -9,24 +9,31 @@ test -x $DAEMON || exit 0
 
 . /lib/lsb/init-functions
 
-dummy() {
-  echo Home is $HOME
-  echo I am `whoami`
-}
-
 start() {
   log_daemon_msg "ABOUT TO START $DESC" "$NAME"
   export HOME=/home/kenny
   runuser -u kenny -- /usr/local/bin/onedrive --monitor &
-  echo STARTED
+  
+  if [ -e $PIDFILE ]; then
+    if $0 status > /dev/null ; then
+      log_success_msg "$DESC already started; not starting"
+      return
+    else
+      log_success_msg "Removing stale PID file $PIDFILE"
+      rm -f $PIDFILE
+    fi
+  fi
+
+  mkdir -p `dirname "$PIDFILE"`
+  echo $! > $PIDFILE
+  log_success_msg "$NAME service started"
 }
 
 stop() {
-  echo ABOUT TO STOP
-}
-
-status() {
-  echo STATUS
+  log_daemon_msg "Stopping $DESC" "$NAME"
+  start-stop-daemon --stop --retry 5 --quiet --oknodo --pidfile $PIDFILE
+  log_end_msg $?
+  rm -f $PIDFILE
 }
 
 case "$1" in
@@ -37,7 +44,7 @@ case "$1" in
     stop
     ;;
   status)
-    status
+    status_of_proc -p $PIDFILE "$DAEMON" onedrive
     ;;
   restart|reload|condrestart)
     stop
@@ -45,5 +52,6 @@ case "$1" in
     ;;
   *)
     echo Don\'t recognize command \'$1\'
-    exit 1
+    exit 2
+    ;;
 esac
