@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+rm -rf nordvpn
+mkdir nordvpn
+cp nordvpn.run nordvpn/run
+sudo rm -rf /etc/runit/sv/nordvpn
+sudo cp -r nordvpn /etc/runit/sv/
