@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-sudo xbps-install -y dmd libcurl-devel sqlite-devel pkg-config
-
-../software/add.onedrive
+sudo xbps-install -y onedrive
 cd apps/onedrive
 ./install.service.kenny.sh
