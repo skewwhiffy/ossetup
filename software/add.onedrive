@@ -5,7 +5,7 @@ cd ~/code/third.party
 rm -rf onedrive
 git clone https://github.com/abraunegg/onedrive
 cd onedrive
-git checkout v2.4.9
+git checkout v2.4.13
 
 ./configure
 make clean
