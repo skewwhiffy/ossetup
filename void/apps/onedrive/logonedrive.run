@@ -1,2 +1,2 @@
 #!/bin/sh
-exec svlogd -t /etc/runit/sv/onedrive/log
+exec svlogd -t /etc/sv/onedrive/log
