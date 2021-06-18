@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+mkdir -p ~/code/third.party
+cd ~/code/third.party
+rm -rf spotblock
+git clone https://github.com/mahkoh/spotblock
+cd spotblock
+
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr ..
+make
+sudo make install
