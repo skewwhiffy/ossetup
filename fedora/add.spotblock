@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-sudo dnf install -y cmake g++ pulseaudio-libs-devel systemd-devel git
-
-../software/add.spotblock
