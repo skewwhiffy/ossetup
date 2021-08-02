@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
 
-echo Getting latest version of nordvpn
-fileName=$(curl https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/ | grep amd64 | grep deb | sort -r | head -n 1 | grep -oP ">.*<" | sed "s/>//" | sed "s/<//")
-url=https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/$fileName
+echo Adding nordvpn repositories
+wget -O nordvpn-release.deb https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
+sudo apt install -y ./nordvpn-release.deb
 
-echo Downloading latest version of nordvpn
-rm -f nordvpn.deb
-wget -O nordvpn.deb $url
-
-sudo apt install ./nordvpn.deb
+echo Installing latest nordvpn
 sudo apt update
-sudo apt install nordvpn
+sudo apt install -y nordvpn
 sudo usermod -aG nordvpn $(whoami)
 
 echo Done
