@@ -12,7 +12,7 @@ Artix installation instructions
 * /mnt/etc/locale.conf LANG=en_GB.UTF-8
 * /mnt/etc/vconsole.conf KEYMAP=uk
 * /mnt/etc/hostname
-* (Artix) fstabgen -L /mnt >> /mnt/etc/fstab
+* (Artix) fstabgen -L /mnt > /mnt/etc/fstab
 * (Artix) artix-chroot /mnt
 
 In new environment
