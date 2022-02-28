@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 mkdir -p ~/code/third.party
 cd ~/code/third.party
 rm -rf ksuperkey
@@ -8,3 +7,5 @@ cd ksuperkey
 make
 sudo make install
 
+echo "ksuperkey -e 'Super_L=Shift_L|Control_L|Alt_L|Super_L|M'" | xclip -selection clipboard
+echo Superkey command for whiskermenu now in the clipboard
