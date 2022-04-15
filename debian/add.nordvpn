@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+echo Installing dependencies
+sudo apt update
+sudo apt install -y wget
+
 echo Adding nordvpn repositories
 wget -O nordvpn-release.deb https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
 sudo apt install -y ./nordvpn-release.deb
