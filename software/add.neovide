@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+echo Installing Rust
+rm -f rustup-init
+curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" > rustup-init
+chmod +x rustup-init
+./rustup-init -y
+
+echo Cloning neovide repository
+mkdir -p ~/code/third.party
+cd ~/code/third.party
+sudo rm -rf neovide
+git clone https://github.com/neovide/neovide
+cd neovide
+
+echo Building neovide
+~/.cargo/bin/cargo build --release
+
+echo Installing neovim
+cp ./target/release/neovide ~/.local/bin/
