@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+
+sudo zypper install \
+  fontconfig-devel \
+  freetype-devel \
+  libstdc++-devel \
+  xcb-util-devel
+  
+../software/add.neovide
