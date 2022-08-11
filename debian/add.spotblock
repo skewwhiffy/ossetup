@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-sudo apt install -y make cmake git libsystemd-dev libpulse-dev g++
-
-../software/add.spotblock

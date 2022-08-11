@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-sudo apt install -y gcc make libx11-dev libxtst-dev pkg-config
-
-../software/add.ksuperkey
