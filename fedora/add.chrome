@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+sudo dnf update
+sudo dnf install -y wget
+
+echo Downloading Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+
+echo Installing Chrome
+sudo dnf install -y google-chrome-stable_current_x86_64.rpm
+
+echo Done
