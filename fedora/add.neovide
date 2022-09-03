@@ -2,7 +2,7 @@
 
 echo Installing dependencies
 
-sudo dnf install \
+sudo dnf -y install \
   fontconfig-devel \
   freetype-devel \
   libstdc++-devel \
