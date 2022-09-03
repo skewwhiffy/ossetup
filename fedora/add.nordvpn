@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+sudo dnf install -y wget
+
+echo Adding nordvpn repositories
+sh <(wget -qO - https://downloads.nordcdn.com/apps/linux/install.sh) 
+sudo usermod -aG nordvpn $(whoami)
+
+echo Done
