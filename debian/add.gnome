@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+echo Installing minimal GNOME
+sudo apt install gnome-session gnome-shell gnome-backgrounds gnome-applets gnome-control-center gnome-terminal
+echo Done
