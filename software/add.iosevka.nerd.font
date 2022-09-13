@@ -6,3 +6,9 @@ url="https://github.com/ryanoasis/nerd-fonts/releases/download/$latest_version/I
 echo Downloading latest version
 rm -rf Iosevka.zip
 wget "$url"
+
+echo Unzipping font
+sudo rm -rf /usr/share/fonts/iosevka
+sudo unzip ./Iosevka.zip -d /usr/share/fonts/iosevka
+
+echo Done
