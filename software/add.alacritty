@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+echo Installing Rust
+rm -f rustup-init
+curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" > rustup-init
+chmod +x rustup-init
+./rustup-init -y
+
+echo Cloning alacritty repository
+mkdir -p ~/code/third.party
+cd ~/code/third.party
+rm -rf alacritty
+git clone https://github.com/alacritty/alacritty
+cd alacritty
+
+echo Building alacritty
+~/.cargo/bin/rustup override set stable
+~/.cargo/bin/rustup update stable
+~/.cargo/bin/cargo build --release
+
+echo Installing alacritty
+cp ./target/release/alacritty ~/.local/bin/
