@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo Installing
+sudo apt update
+sudo apt install -y \
+  fonts-noto-cjk \
+  fonts-noto-cjk-extra \
+  fonts-noto-color-emoji \
+  fonts-noto-core \
+  fonts-noto-extra \
+  fonts-noto-hinted \
+  fonts-noto-mono \
+  fonts-noto-ui-core \
+  fonts-noto-ui-extra \
+  fonts-noto-unhinted \
+
+echo Done
