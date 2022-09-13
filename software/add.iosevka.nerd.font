@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+echo Getting latest version
+latest_version="$(curl --silent  https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')"
+url="https://github.com/ryanoasis/nerd-fonts/releases/download/$latest_version/Iosevka.zip"
+
+echo Downloading latest version
+rm -rf Iosevka.zip
+wget "$url"
