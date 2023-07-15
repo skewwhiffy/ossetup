@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+sudo cat <<EOF | sudo tee /etc/apt/preferences.d/nosnap.pref
+Package: snapd
+Pin: release a=*
+Pin-Priority: -10
+EOF

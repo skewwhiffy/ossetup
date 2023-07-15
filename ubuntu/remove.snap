@@ -1,3 +1,46 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python
+import subprocess
 
-../debian/add.chrome
+
+def get_installed_snaps():
+    try:
+        raw = subprocess.check_output(['snap', 'list'])
+    except:
+        return []
+    raw_lines = raw.splitlines()
+    return [x.decode('utf-8').split(' ')[0] for x in raw_lines][1::]
+
+
+def uninstall_all_snaps():
+    snaps = get_installed_snaps()
+    for snap in snaps:
+        subprocess.run(['sudo', 'snap', 'remove', snap])
+    remaining_snaps = get_installed_snaps()
+    if len(remaining_snaps) == 0:
+        print('There are no more snaps. Hurray.')
+        return
+    if len(remaining_snaps) >= len(snaps):
+        print('*** Did not manage to remove any snaps. I give up. ***')
+        exit()
+    if len(remaining_snaps) >= 0:
+        print('There are still snaps remaining, will try again')
+        uninstall_all_snaps()
+
+
+def uninstall_snap():
+    subprocess.check_call(['sudo', 'apt', 'purge', 'snapd', '-y'])
+    subprocess.run(['sudo', 'apt-mark', 'hold', 'snapd'])
+
+    folders_to_kill = ['~/snap', '/snap', '/var/snap', '/var/lib/snapd']
+    for folder in folders_to_kill:
+        print(f'Removing folder ${folder}')
+        subprocess.run(['sudo', 'rm', '-rf', folder])
+        
+    subprocess.check_call(['./prevent.snap'])
+    
+
+
+if __name__ == '__main__':
+    uninstall_all_snaps()
+    uninstall_snap()
+
