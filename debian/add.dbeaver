@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+sudo apt install -y wget
+
+echo Downloading DBeaver
+rm -rf dbeaver-ce_latest_amd64.deb
+wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+
+echo Installing DBeaver
+sudo apt install -y ./dbeaver-ce_latest_amd64.deb
