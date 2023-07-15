@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+sudo apt update
+sudo apt install -y curl \
+  cmake pkg-config libfreetype6-dev \
+  libfontconfig1-dev libxcb-xfixes0-dev \
+  libxkbcommon-dev python3
+
+../software/add.alacritty
+
+echo Done

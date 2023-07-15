@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+sudo apt install wget
+
+echo Downloading deb file
+rm -rf synaptics-repository-keyring.deb
+wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
+
+echo Installing keyring
+sudo apt install ./synaptics-repository-keyring.deb
+
+echo Installing driver
+sudo apt update
+sudo apt install -y displaylink-driver
