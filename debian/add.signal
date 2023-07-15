@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+sudo apt install -y wget
+
+echo Installing Signal key
+rm -rf signal-desktop-keyring.gpg
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+
+echo Adding Signal repository
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
+   sudo tee /etc/apt/sources.list.d/signal-xenial.list
+
+echo Install signal
+sudo apt update
+sudo apt install -y signal-desktop
