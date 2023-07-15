@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+sudo apt install -y wget
+
+echo Installing entroware repos
+wget -qO- repo.entroware.com | bash
+
+echo Installing entroware base
+sudo apt install -y entroware-base
+
