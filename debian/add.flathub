@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+../software/add.flathub
+echo Done

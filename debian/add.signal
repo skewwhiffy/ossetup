@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+../debian/ensure.nala
+
 echo Installing dependencies
-sudo apt install -y wget
+sudo nala install --assume-yes wget
 
 echo Installing Signal key
 rm -rf signal-desktop-keyring.gpg
@@ -13,5 +15,5 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
    sudo tee /etc/apt/sources.list.d/signal-xenial.list
 
 echo Install signal
-sudo apt update
-sudo apt install -y signal-desktop
+sudo nala update
+sudo nala install --assume-yes signal-desktop

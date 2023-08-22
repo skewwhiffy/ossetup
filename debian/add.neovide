@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 echo Installing dependencies
-sudo apt update
-sudo apt install -y curl \
+../debian/ensure.nala
+sudo nala install --assume-yes curl \
     gnupg ca-certificates git \
     gcc-multilib g++-multilib cmake libssl-dev pkg-config \
     libfreetype6-dev libasound2-dev libexpat1-dev libxcb-composite0-dev \

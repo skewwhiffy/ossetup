@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 echo Installing dependencies
-sudo apt install -y make cmake build-essential pkg-config libunibilium-dev \
+../debian/ensure.nala
+
+sudo nala install --assume-yes make cmake build-essential pkg-config libunibilium-dev \
    libtool-bin unzip luarocks gettext
 
 echo Cloning neovim repository
