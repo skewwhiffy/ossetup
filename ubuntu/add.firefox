@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+../debian/ensure.nala
+sudo nala install software-properties-common --assume-yes
 sudo add-apt-repository -y ppa:mozillateam/ppa
 
 echo '
@@ -9,5 +11,10 @@ Pin-Priority: 1001
 ' | sudo tee /etc/apt/preferences.d/mozilla-firefox
 
 echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
+
+echo 'Package: firefox*
+Pin: release o=Ubuntu*
+Pin-Priority: -1
+' | sudo tee /etc/apt/preferences.d/firefox-no-snap
 
 sudo nala install --assume-yes firefox
