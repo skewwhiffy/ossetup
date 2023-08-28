@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-../debian/ensure.nala
-sudo nala install software-properties-common --assume-yes
+sudo apt install software-properties-common -y
 sudo add-apt-repository -y ppa:mozillateam/ppa
 
 echo '
@@ -17,4 +16,4 @@ Pin: release o=Ubuntu*
 Pin-Priority: -1
 ' | sudo tee /etc/apt/preferences.d/firefox-no-snap
 
-sudo nala install --assume-yes firefox
+sudo apt install -y firefox

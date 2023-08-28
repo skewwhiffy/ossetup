@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-../debian/ensure.nala
-sudo nala install wget
+sudo apt install wget -y
 
 echo Downloading Zoom
 rm -rf zoom_amd64.deb
 wget https://zoom.us/client/latest/zoom_amd64.deb
 
 echo Installing Zoom
-sudo nala install --assume-yes ./zoom_amd64.deb
+sudo apt install -y ./zoom_amd64.deb

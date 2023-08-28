@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
-../debian/ensure.nala
 echo Installing dependencies
-sudo nala install --assume-yes wget
+sudo apt install -y wget
 
 echo Downloading DBeaver
 rm -rf dbeaver-ce_latest_amd64.deb
 wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
 
 echo Installing DBeaver
-sudo nala install --assume-yes ./dbeaver-ce_latest_amd64.deb
+sudo apt install -y ./dbeaver-ce_latest_amd64.deb

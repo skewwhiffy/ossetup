@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 echo Installing
-../debian/ensure.nala
-
-sudo nala install --assume-yes \
+sudo apt install -y \
   fonts-noto-cjk \
   fonts-noto-cjk-extra \
   fonts-noto-color-emoji \

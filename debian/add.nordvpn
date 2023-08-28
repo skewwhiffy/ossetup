@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 
 echo Installing dependencies
-../debian/ensure.nala
-sudo nala install --assume-yes wget
+sudo apt install -y wget
 
 echo Adding nordvpn repositories
 wget -O nordvpn-release.deb https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
-sudo nala install --assume-yes ./nordvpn-release.deb
+sudo apt install -y ./nordvpn-release.deb
 
 echo Installing latest nordvpn
-sudo nala update
-sudo nala install --assume-yes nordvpn
+sudo apt update
+sudo apt install -y nordvpn
 sudo usermod -aG nordvpn $(whoami)
 
 echo Done

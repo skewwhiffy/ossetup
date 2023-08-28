@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 
 echo Installing dependencies
-../debian/ensure.nala
-sudo nala install --assume-yes wget
+sudo apt install -y wget
 
 echo Installing entroware repos
 wget -qO- repo.entroware.com | bash
 
 echo Installing entroware base
-echo TODO: Use nala
 sudo apt update
-sudo apt install --assume-yes entroware-base
+sudo apt install -y entroware-base
 
