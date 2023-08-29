@@ -2,7 +2,7 @@
 
 echo Installing dependencies
 sudo apt install -y make cmake build-essential pkg-config libunibilium-dev \
-   libtool-bin unzip luarocks gettext
+   libtool-bin unzip luarocks gettext cmake
 
 echo Cloning neovim repository
 mkdir -p ~/code/third.party
