@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 echo Installing
-sudo apt install -y \
+sudo apt update
+sudo apt install -y nala
+sudo nala install --assume-yes \
   fonts-noto-cjk \
   fonts-noto-cjk-extra \
   fonts-noto-color-emoji \
