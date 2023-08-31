@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+sudo xbps-install -Syyu 
+sudo xbps-install -Syu \
+  gnome-disk-utility \
+  docker \
+  keepassxc \
+  nautilus-dropbox \
+  rhythmbox \
+  pulseaudio \
+  vscode \
+  hplip \
+  dbeaver \
+  rtl8812au-dkms
+  
