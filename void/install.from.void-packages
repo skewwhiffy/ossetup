@@ -13,4 +13,4 @@ cd "$void_packages_directory"
 ./xbps-src pkg $1
 
 echo Installing $2
-sudo xbps-install -Syy --repository "./hostdir/binpkgs$3/$1"
+sudo xbps-install -Syy --repository "./hostdir/binpkgs$3" $1
