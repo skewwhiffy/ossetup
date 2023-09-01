@@ -19,5 +19,5 @@ touch code
 chmod +x code
 echo "#!/usr/bin/env bash" >> code
 echo "" >> code
-echo "nohup $target_directory "$@" > /dev/null 2>&1 &" >> code
+echo "nohup $target_directory \"\$@\" > /dev/null 2>&1 &" >> code
 
