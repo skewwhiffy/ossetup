@@ -1,2 +1,0 @@
-#!/bin/sh
-exec svlogd -t /etc/sv/onedrive@kenny/log
