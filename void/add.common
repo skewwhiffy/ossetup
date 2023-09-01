@@ -6,10 +6,8 @@ sudo xbps-install -Syu \
   docker \
   keepassxc \
   nautilus-dropbox \
-  rhythmbox \
-  pulseaudio \
-  vscode \
-  hplip \
+  rhythmbox gst-libav gst-plugins-good1 gst-plugins-ugly gstreamer1-pipewire \
   dbeaver \
-  rtl8812au-dkms
+  rtl8812au-dkms \
+  firefox
   
