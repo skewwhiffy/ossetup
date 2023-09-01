@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+target_directory="/opt/VSCode-linux-x64/bin/code"
+if [ ! -f "$target_directory" ]; then
+  echo Please download VS Code .tar.gz file from https://code.visualstudio.com/download
+  echo Then tar xfz the file in ~/Downloads
+  echo Then copy the resulting VSCode-linux-x64 to /opt
+  exit 1
+fi
+
+cd ~/.local/bin
+if [ -f code ]; then
+  echo code already installed
+  exit 0
+fi
+
+echo Setting code in CLI
+touch code
+chmod +x code
+echo "#!/usr/bin/env bash" >> code
+echo "" >> code
+echo "nohup $target_directory "$@" > /dev/null 2>&1 &" >> code
+
