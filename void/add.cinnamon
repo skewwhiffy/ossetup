@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 
 sudo xbps-install -Syyu
-sudo xbps-install -Syu lightdm-gtk3-greeter cinnamon xorg
+sudo xbps-install -Syu \
+  lightdm-gtk3-greeter \
+  cinnamon \
+  xorg \
+  gnome-keyring \
+  blueman bluez bluez-alsa
