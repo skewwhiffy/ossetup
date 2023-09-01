@@ -8,5 +8,6 @@ sudo xbps-install -Syu \
   nautilus-dropbox \
   rhythmbox gst-libav gst-plugins-good1 gst-plugins-ugly1 gstreamer1-pipewire \
   dbeaver \
-  firefox
+  firefox \
+  gnome-authenticator
   
