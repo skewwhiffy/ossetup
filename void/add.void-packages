@@ -2,6 +2,12 @@
 
 target_directory="$HOME/code/third.party/void-packages"
 
-if [ ! -d "$target_directory" ]; then
-  git clone https://github.com/void-linux/void-packages "$target_directory"
+if [ -d "$target_directory" ]; then
+  echo void-packages has already been cloned
+  exit 0
 fi
+
+git clone https://github.com/void-linux/void-packages "$target_directory"
+cd "$target_directory"
+echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
+./xbps-src binary-bootstrap

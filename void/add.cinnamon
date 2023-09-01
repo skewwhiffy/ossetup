@@ -6,4 +6,5 @@ sudo xbps-install -Syu \
   cinnamon \
   xorg \
   gnome-keyring \
-  blueman bluez bluez-alsa
+  blueman bluez bluez-alsa \
+  xclip
