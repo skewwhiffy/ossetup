@@ -1,15 +1,3 @@
 #!/usr/bin/env bash
 
-void_packages_directory="$HOME/code/third.party/void-packages"
-
-if [ ! -d  "$void_packages_directory" ]; then
-  echo Ensure add.void-packages has been installed
-  exit 1
-fi
-
-echo Building Google Chrome package
-cd "$void_packages_directory"
-./xbps-src pkg google-chrome
-
-echo Installing Google Chrome
-sudo xbps-install -Syy --repository ./hostdir/binpkgs/nonfree google-chrome
+./install.from.void-packages google-chrome 'Google Chrome' '/nonfree'
