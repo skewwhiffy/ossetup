@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+sudo xbps-install -Syu \
+	base-devel libffi-devel bzip2-devel openssl openssl-devel \
+	readline readline-devel sqlite-devel xz liblzma-devel zlib zlib-devel
+
+echo Installing asdf
+../software/add.asdf
+
+echo Done
