@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+target_directory="$HOME/code/third.party/void-packages"
+
+if [ ! -d "$target_directory" ]; then
+  git clone https://github.com/void-linux/void-packages "$target_directory"
+fi

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo xbps-install -Syyu 
+sudo xbps-install -Syu noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf noto-fonts-ttf-extra
