@@ -6,8 +6,7 @@ sudo xbps-install -Syu \
   docker \
   keepassxc \
   nautilus-dropbox \
-  rhythmbox gst-libav gst-plugins-good1 gst-plugins-ugly gstreamer1-pipewire \
+  rhythmbox gst-libav gst-plugins-good1 gst-plugins-ugly1 gstreamer1-pipewire \
   dbeaver \
-  rtl8812au-dkms \
   firefox
   
