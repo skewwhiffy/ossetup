@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+sudo xbps-install -Syu flatpak
+../software/add.flathub
+
+echo Done
