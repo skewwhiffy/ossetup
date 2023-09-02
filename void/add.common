@@ -7,6 +7,7 @@ sudo xbps-install -Syu \
   keepassxc \
   nautilus-dropbox \
   rhythmbox gst-libav gst-plugins-good1 gst-plugins-ugly1 gstreamer1-pipewire \
+  libspa-bluetooth alsa-pipewire libjack-pipewire libpipewire libpipewire0.2 wireplumber \
   dbeaver \
   firefox \
   gnome-authenticator
