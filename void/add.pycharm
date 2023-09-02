@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-./install.from.void-packages pycharm-community 'Pycharm CE' '/nonfree'
