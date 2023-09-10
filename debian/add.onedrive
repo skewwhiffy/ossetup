@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-sudo apt install -y build-essential libcurl4-openssl-dev libsqlite3-dev pkg-config curl libnotify-dev
-curl -fsS https://dlang.org/install.sh | bash -s dmd
-dmd_version=`ls ~/dlang | grep dmd`
-source ~/dlang/$dmd_version/activate
-
-../software/add.onedrive
