@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
 sudo xbps-install -y onedrive
-cd apps/onedrive
-./direct.install
