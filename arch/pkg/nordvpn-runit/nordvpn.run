@@ -1,4 +1,0 @@
-#!/bin/sh
-[ -r conf ] && . ./conf
-modprobe -q loop || exit 1
-exec chpst -o 1048576 -p 1048576 nordvpnd $OPTS 2>/dev/null

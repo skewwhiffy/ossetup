@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-rm -rf onedrive@`whoami`
-mkdir onedrive@`whoami`
-cp onedrive.run onedrive@`whoami`/run
-mkdir onedrive@`whoami`/log
-cat logonedrive.run | sed "s/onedrive/onedrive@`whoami`/" >> onedrive@`whoami`/log/run
-chmod +x onedrive@`whoami`/log/run
-sudo rm -rf /etc/runit/sv/onedrive@`whoami`
-sudo cp -r onedrive@`whoami` /etc/runit/sv/
