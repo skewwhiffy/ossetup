@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+echo Installing dependencies
+sudo pacman -S --noconfirm --needed flatpak
+
+../software/add.flathub
