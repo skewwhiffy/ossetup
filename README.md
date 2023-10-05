@@ -6,7 +6,7 @@ Setup scripts for OSes
 * Add standard user, which groups wheel/sudo, docker, nordvpn
 * Change wheel/sudo group users to not require password
 * Restore backup of ssh keys
-* curl, zip, wget
+* curl, unzip, zip, wget
 * asdf, python, nodejs, java, maven
 * Remove snap, if relevant
 * NVidia driver
@@ -17,17 +17,19 @@ Setup scripts for OSes
 * fish, and change shell
 * guake
 * Reboot (when above is all done)
-* Rhythmbox + sync music
 * iosevka nerd font
-* Dropbox
+* Rhythmbox + sync music
+* Jetbrains toolbox
+* IntelliJ + Pycharm + keyboard shortcuts
+* Dropbox, Firefox (set up profiles, log into Dropbox)
 * Keepass
+* Bluetooth
 * Chrome + profiles
-* Authenticator, Slack, Signal, DBeaver
-* Firefox + profiles
+* Authenticator, Slack, Signal, DBeaver, Zoom, Insomnia
+* Log into Firefox profiles
 * neovim
 * VSCode
 * onedrive, nordvpn, docker
 * Clone bootcamp x 2, cfg
 * Clone auraltester and build
-* Jetbrains toolbox
-* IntelliJ + Pycharm + keyboard shortcuts
+* Run mysql container, and connect using DBeaver
