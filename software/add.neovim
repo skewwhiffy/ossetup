@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo Installing Neovim
+
+URL='https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz'
+FILE=$(basename ${URL})
+DEST=$PWD/$FILE
+DIR="/opt/neovim"
+
+echo Downloading Toolbox files
+wget -cO  ${DEST} ${URL} --read-timeout=5 --tries=0
+
+echo Installing to $DIR
+sudo mkdir "$DIR"
+sudo tar -xzf ${DEST} -C ${DIR} --strip-components=1
+
+echo Done
