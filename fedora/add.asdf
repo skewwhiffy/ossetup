@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+sudo dnf install -y make gcc patch zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel libuuid-devel gdbm-libs libnsl2
+
+echo Installing asdf
+../software/add.asdf
+
+echo Done
