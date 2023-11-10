@@ -1,3 +1,4 @@
 *.deb
 *.gpg
 rustup-init
+*.tar.gz
