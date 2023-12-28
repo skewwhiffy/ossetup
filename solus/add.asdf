@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+sudo eopkg it -c system.devel -y
+sudo eopkg install -y git gcc make zlib-devel bzip2-devel readline-devel sqlite3-devel openssl-devel tk-devel
+
+echo Installing asdf
+../software/add.asdf
+
+echo Done
