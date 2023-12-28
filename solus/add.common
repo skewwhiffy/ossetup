@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo Installing dependencies
+sudo eopkg libayatana-appindicator # Needed for spotify
+
+echo Done
