@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 echo Installing dependencies
-sudo nala update
-sudo nala install --assume-yes build-essential libssl-dev zlib1g-dev \
-	libbz2-dev libreadline-dev libsqlite3-dev curl \
+sudo apt update
+sudo apt install -y build-essential gcc libssl-dev zlib1g-dev \
+	libbz2-dev libreadline-dev libsqlite3-dev curl make pkgconf \
 	libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 echo Installing asdf
