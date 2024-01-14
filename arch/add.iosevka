@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-yay -Syu --noconfirm --needed nerd-fonts-meta
+yay -Syu --noconfirm --needed nerd-fonts
