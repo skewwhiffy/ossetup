@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
+# THIS DOES NOT WORK
+
 set -e
 
-antlrVersion=4.13.1
+antlrVersion=4.11.1
+version=8.0.36
 
 echo Installing dependencies
 sudo apt install build-essential cmake cmake-data autoconf automake \
@@ -22,13 +25,15 @@ antlrFilename=antlr-${antlrVersion}-complete.jar
 antlrPath=$(pwd)/${antlrFilename}
 rm -rf ${antlrFilename}
 wget https://www.antlr.org/download/${antlrFilename}
+echo antlrPath is ${antlrPath}
 
 echo Cloning mysql workbench repo
 mkdir -p ~/code/third.party
 cd ~/code/third.party
-# sudo rm -rf mysql-workbench
-# git clone https://github.com/mysql/mysql-workbench
+sudo rm -rf mysql-workbench
+git clone https://github.com/mysql/mysql-workbench
 cd mysql-workbench
+git checkout ${version}
 
 echo Building
 mkdir -p wb-build
