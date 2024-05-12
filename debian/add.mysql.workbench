@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set -e
+
+antlrVersion=4.13.1
+
 echo Installing dependencies
 sudo apt install build-essential cmake cmake-data autoconf automake \
 			pkg-config libtool libzip-dev libxml2-dev \
@@ -13,6 +17,12 @@ sudo apt install build-essential cmake cmake-data autoconf automake \
 			libssh-dev rapidjson-dev unixodbc-dev \
 			-y
 
+echo Downloading antlr4 jar
+antlrFilename=antlr-${antlrVersion}-complete.jar
+antlrPath=$(pwd)/${antlrFilename}
+rm -rf ${antlrFilename}
+wget https://www.antlr.org/download/${antlrFilename}
+
 echo Cloning mysql workbench repo
 mkdir -p ~/code/third.party
 cd ~/code/third.party
@@ -21,9 +31,9 @@ cd ~/code/third.party
 cd mysql-workbench
 
 echo Building
-mkdir wb-build
+mkdir -p wb-build
 cd wb-build
-cmake [-DCMAKE_INSTALL_PREFIX=/usr -DUSE_UNIXODBC=True] ..
+cmake [-DCMAKE_INSTALL_PREFIX=/usr -DUSE_UNIXODBC=True -DWITH_ANTLR_JAR=${antlrPath}] ..
 make
 sudo make install
 
