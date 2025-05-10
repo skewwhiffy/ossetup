@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
-mkdir -p ~/.config/fish/completions
-ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+URL='https://github.com/asdf-vm/asdf/releases/download/v0.16.7/asdf-v0.16.7-linux-amd64.tar.gz'
+FILE=$(basename ${URL})
+DEST=$PWD/$FILE
+DIR="$HOME/.local/bin"
+
+echo Downloading asdf
+wget -cO  ${DEST} ${URL} --read-timeout=5 --tries=0
+
+echo Installing to $DIR
+tar -xzf ${DEST} -C ${DIR}
+
+echo DONE
