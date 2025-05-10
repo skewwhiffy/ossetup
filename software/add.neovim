@@ -2,7 +2,9 @@
 
 echo Installing Neovim
 
-URL='https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz'
+# URL='https://github.com/neovim/neovim/releases/download/v0.11.1/nvim-linux-x86_64.tar.gz'
+
+URL='https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz'
 FILE=$(basename ${URL})
 DEST=$PWD/$FILE
 DIR="/opt/neovim"
